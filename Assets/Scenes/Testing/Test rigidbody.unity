@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 1346098919}
   - component: {fileID: 1346098924}
   - component: {fileID: 1346098925}
+  - component: {fileID: 1346098926}
   m_Layer: 0
   m_Name: Rigidbody
   m_TagString: Untagged
@@ -735,9 +736,31 @@ MonoBehaviour:
   FeetTransForm: {fileID: 626512134}
   PlayerCamera: {fileID: 1239555701}
   PlayerBody: {fileID: 1346098924}
-  speed: 5
+  Speed: 0
   Sensitivty: 3
   Jumpforce: 10
+--- !u!114 &1346098926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346098918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c67cb8840e58848b7e7c1286783fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Damaged:
+    m_PersistentCalls:
+      m_Calls: []
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
