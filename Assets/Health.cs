@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShortcutManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,7 +41,7 @@ public class Health : MonoBehaviour
     public UnityEvent<int> Damaged;
     public UnityEvent Died;
 
-    void Awake()
+    private void Awake()
     {
         Hp = MaxHealth;
     }
@@ -48,9 +49,9 @@ public class Health : MonoBehaviour
 
     public void Damage(int amount) => PublicHp -= amount;
     public void Heal(int amount) => PublicHp += amount;
-    public void Healfull(int amount) => PublicHp = MaxHealth;
-    public void Kill(int amount) => PublicHp = 0;
-    public void Adjust(int amount) => PublicHp -= amount;
+    public void Healfull() => PublicHp = MaxHealth;
+    public void Kill() => PublicHp = 0;
+    public void Adjust(int value) => PublicHp -= value;
 
 }
 
