@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class RigidbodyMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -20,38 +20,38 @@ public class Movement : MonoBehaviour
     [SerializeField] private float Jumpforce;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerMovementInput= new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        PlayerMouseInput= new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         MovePlayer();
         MovePlayerCamera();
     }
 
-    private void MovePlayer ()
+    private void MovePlayer()
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
         PlayerBody.velocity = new Vector3(MoveVector.x, PlayerBody.velocity.y, MoveVector.z);
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {   
-            if(Physics.CheckSphere(FeetTransForm.position , 0.1f, FloorMask))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Physics.CheckSphere(FeetTransForm.position, 0.1f, FloorMask))
             {
                 PlayerBody.AddForce(Vector3.up * Jumpforce, ForceMode.Impulse);
             }
         }
     }
 
-    private void MovePlayerCamera ()
+    private void MovePlayerCamera()
     {
         xRot -= PlayerMouseInput.y * Sensitivty;
         transform.Rotate(0f, PlayerMouseInput.x * Sensitivty, 0f);
         PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
-         
+
     }
 }

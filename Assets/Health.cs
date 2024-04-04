@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 //Reffrence https://www.youtube.com/watch?v=oZ2GWWjL4Fo
 
-public class Healt : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private int MaxHealth;
     private int Hp;
