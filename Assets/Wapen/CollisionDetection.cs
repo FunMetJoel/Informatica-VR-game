@@ -5,21 +5,50 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
+    private float lastDamageTime = 0f;
+    public float damageCooldown = 0.55f;
+    private List<GameObject> hitEnemies = new List<GameObject>();    
+    
     //public GameObject HitParticle;
 
 
-    private void OnTriggerEnter(Collider other) 
+        private void Update()
     {
-        if(other.tag == "Enemy" && wc.IsAttacking)
+        // Check if the cooldown period has expired, then clear the list of hit enemies
+        if (Time.time - lastDamageTime >= damageCooldown)
         {
-            Debug.Log(other.name);
-            other.GetComponent<Animator>().SetTrigger("Hit");
-            other.GetComponent<Health>().Damage(1);
-            //Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-
+            hitEnemies.Clear();
         }
-    
     }
 
 
+
+
+    private void DealDamage(GameObject enemy)
+    {
+        if(enemy.tag == "Enemy" && wc.IsAttacking)
+        {
+            if (Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy))
+            {
+            Debug.Log(enemy.name);
+            enemy.GetComponent<Animator>().SetTrigger("Hit");
+            enemy.GetComponent<Health>().Damage(1);
+            lastDamageTime = Time.time;
+            hitEnemies.Add(enemy);
+            //Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        DealDamage(other.gameObject);   
+    }
+
+    private void OnTriggerStay(Collider other) {
+        DealDamage(other.gameObject);
+    }
+    private void OnTriggerEnter(Collider other) {
+        DealDamage(other.gameObject);
+    }
 }
+
