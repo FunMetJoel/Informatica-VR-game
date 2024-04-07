@@ -24,9 +24,17 @@ public class CollisionDetection : MonoBehaviour
 
 
 
-    private void DealDamage(GameObject enemy)
+    private void DealDamage(GameObject enemy, bool vr)
     {
-        if(enemy.tag == "Enemy" && wc.IsAttacking)
+        if(enemy == null)
+        {
+            return;
+        }
+        if((wc == null || !wc.IsAttacking) && (!vr))
+        {
+            return;
+        }
+        if(enemy.tag == "Enemy")
         {
             if (Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy))
             {
@@ -41,14 +49,14 @@ public class CollisionDetection : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other) {
-        DealDamage(other.gameObject);   
+        DealDamage(other.gameObject, false);   
     }
 
     private void OnTriggerStay(Collider other) {
-        DealDamage(other.gameObject);
+        DealDamage(other.gameObject, false);
     }
     private void OnTriggerEnter(Collider other) {
-        DealDamage(other.gameObject);
+        DealDamage(other.gameObject, true);
     }
 }
 
