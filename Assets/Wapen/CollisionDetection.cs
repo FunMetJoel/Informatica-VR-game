@@ -6,7 +6,7 @@ public class CollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
     public SliceObject so;
-    private float lastDamageTime = 0f;
+    public float lastDamageTime = 0f;
     public float damageCooldown = 0.55f;
     public int weaponDamage = 1;
     private List<GameObject> hitEnemies = new List<GameObject>();    
@@ -40,20 +40,27 @@ public class CollisionDetection : MonoBehaviour
         {
         if ((Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy)) && wc.IsAttacking)
             {
-                yield return new WaitUntil(() => !so.targetEmpty);                
-                // yield return new WaitForFixedUpdate();                
+                // lastDamageTime = Time.time;
+                // hitEnemies.Add(enemy);
+                // yield return new WaitUntil(() => !so.targetEmpty);                
+                                
                 int hp = enemy.GetComponent<Health>().PublicHp;
                 Debug.Log(weaponDamage);
                 Debug.Log(hp);
-                Debug.Log(so.target);
-                Debug.Log(so.hasHit);
-                Debug.Log(so);
-                if(so != null && so.target != null){
-                if(so.hasHit && hp <= weaponDamage){
-                    Debug.Log("slice!");
-                    so.slice(so.target);
-                 }
-                 }
+                // Debug.Log(so.target);
+                // Debug.Log(so.hasHit);
+                // Debug.Log(so);
+                // if(so != null && so.target != null){
+                // if(so.hasHit && hp <= weaponDamage){
+                    // Debug.Log("slice!");
+                    // so.slice(so.target);
+                //  }
+                //  }
+
+                if(hp <= weaponDamage)
+                {
+                    enemy.tag = "Cut";
+                }
                  
                 Debug.Log(enemy.name);
                 enemy.GetComponent<Animator>().SetTrigger("Hit");
@@ -80,4 +87,3 @@ public class CollisionDetection : MonoBehaviour
         StartCoroutine(DealDamage(other.gameObject, true)); 
     }
 }
-

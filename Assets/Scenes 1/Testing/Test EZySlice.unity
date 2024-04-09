@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e829227c7ad8b834a97a62eb7ef501aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 25
+  MaxHealth: 5
   Hp: 0
   Healed:
     m_PersistentCalls:
@@ -1138,7 +1138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wc: {fileID: 779009300}
-  so: {fileID: 0}
+  so: {fileID: 1552482367}
+  lastDamageTime: 0
   damageCooldown: 0.55
   weaponDamage: 1
 --- !u!23 &1552482365
@@ -1203,12 +1204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130885c36e66254ab13a035e7eb947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: {fileID: 0}
+  cd: {fileID: 1552482364}
+  wc: {fileID: 779009300}
   startSlicePoint: {fileID: 16237431}
   endSlicePoint: {fileID: 1221667190}
-  cutForce: 2000
+  sliceableLayer:
+    serializedVersion: 2
+    m_Bits: 0
   velocityEstimator: {fileID: 1221667191}
   cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
+  target: {fileID: 0}
+  cutForce: 2000
+  hasHit: 0
+  targetEmpty: 1
 --- !u!1 &2048784260
 GameObject:
   m_ObjectHideFlags: 0
