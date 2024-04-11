@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class MeshFadeOut : MonoBehaviour
 {
-    public GameObject sourceObject; // The object whose material settings will be copied
-    public Material targetMaterial; // The target material
+    private Material targetMaterial; // The target material
     private Renderer meshRenderer = default;
     private Color newColor = default;
 
-    [SerializeField] private float waitBeforeFade = 0f;
-    [SerializeField] private float fadeDelay = 2f;
+    [SerializeField] private float waitBeforeFade = 1.5f;
+    [SerializeField] private float fadeDelay = 3f;
     [SerializeField] private float currentAlpha = 1;
     [SerializeField] private float requiredAlpha = 0;
 
     void Start()
     {
+        targetMaterial = Resources.Load<Material>("Transparent");
         if (targetMaterial == null)
         {
             Debug.LogError("Target material is not assigned.");
             return;
         }
+
 
         CopyMaterialSettings();
 
@@ -39,45 +40,101 @@ public class MeshFadeOut : MonoBehaviour
         StopAllCoroutines();
     }
 
+
     private IEnumerator FadeObject(float currentAlpha, float requiredAlpha, float fadeTime)
     {
         yield return new WaitForSeconds(waitBeforeFade);
+    
+        // Get all materials of the object
+        Material[] materials = meshRenderer.materials;
+    
+        // Fade out each material simultaneously
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / fadeTime)
         {
-            newColor.a = Mathf.Lerp(currentAlpha, requiredAlpha, t);
-            meshRenderer.material.color = newColor;
+            // Interpolate alpha value for each material
+            for (int i = 0; i < materials.Length; i++)
+            {
+                Color color = materials[i].color;
+                color.a = Mathf.Lerp(currentAlpha, requiredAlpha, t);
+                materials[i].color = color;
+            }
+    
             yield return null;
         }
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
-    void CopyMaterialSettings()
+
+
+void CopyMaterialSettings()
+{
+    if (this.gameObject == null)
     {
-        if (sourceObject == null)
+        Debug.LogError("Source object is not assigned.");
+        return;
+    }
+
+    Renderer[] sourceRenderers = this.gameObject.GetComponentsInChildren<Renderer>();
+
+    foreach (Renderer renderer in sourceRenderers)
+    {
+        Material[] sourceMaterials = renderer.sharedMaterials;
+        Material[] newMaterials = new Material[sourceMaterials.Length];
+
+        for (int i = 0; i < sourceMaterials.Length; i++)
         {
-            Debug.LogError("Source object is not assigned.");
-            return;
-        }
+            Material sourceMaterial = sourceMaterials[i];
+            Material newMaterial = new Material(targetMaterial); // Create a new instance of the target material
 
-        Renderer[] sourceRenderers = sourceObject.GetComponentsInChildren<Renderer>();
-
-        foreach (Renderer renderer in sourceRenderers)
-        {
-            Material[] sourceMaterials = renderer.sharedMaterials;
-            Material[] newMaterials = new Material[sourceMaterials.Length];
-
-            for (int i = 0; i < sourceMaterials.Length; i++)
+            // Set color property with desired color
+            if (sourceMaterial.HasProperty("_Color"))
             {
-                Material sourceMaterial = sourceMaterials[i];
-                Material newMaterial = new Material(targetMaterial); // Create a new instance of the target material
-
-                // Copy all material properties
-                newMaterial.CopyPropertiesFromMaterial(sourceMaterial);
-
-                newMaterials[i] = newMaterial;
+                Color sourceColor = sourceMaterial.color;
+                Color newColor = new Color(sourceColor.r, sourceColor.g, sourceColor.b, sourceColor.a);
+                newMaterial.color = newColor;
+            }
+            else
+            {
+                Debug.LogWarning("Source material " + sourceMaterial.name + " does not have a color property.");
             }
 
-            renderer.materials = newMaterials; // Assign the new materials to the renderer
+
+            if (sourceMaterial.HasProperty("_EmissionColor"))
+            {
+                newMaterial.SetColor("_EmissionColor", sourceMaterial.GetColor("_EmissionColor"));
+                newMaterial.EnableKeyword("_EMISSION");
+            }
+
+
+            if (sourceMaterial.mainTexture != null)
+            {
+                newMaterial.mainTexture = sourceMaterial.mainTexture;
+            }
+
+
+            if (sourceMaterial.HasProperty("_Mode"))
+            {
+                if (sourceMaterial.GetFloat("_Mode") == 2) // Assuming transparent rendering mode is set to "Fade"
+                {
+                    newMaterial.SetFloat("_Mode", 2); // Set rendering mode to "Fade"
+                    newMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                    newMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                    newMaterial.SetInt("_ZWrite", 0);
+                    newMaterial.DisableKeyword("_ALPHATEST_ON");
+                    newMaterial.EnableKeyword("_ALPHABLEND_ON");
+                    newMaterial.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                    newMaterial.renderQueue = 3000;
+                }
+            }
+
+            newMaterials[i] = newMaterial;
         }
+
+        renderer.materials = newMaterials; // Assign the new materials to the renderer
     }
+}
+
+    
+
+
 }
