@@ -26,36 +26,24 @@ public class CollisionDetection : MonoBehaviour
 
 
 
-    public IEnumerator DealDamage(GameObject enemy, bool vr)
+    public void DealDamage(GameObject enemy, bool vr)
     {
         if(enemy == null)
         {
-            yield break;
+            return;
         }
         if((wc == null || !wc.IsAttacking) && (!vr))
         {
-            yield break;
+            return;
         }
         if(enemy.tag == "Enemy")
         {
         if ((Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy)) && wc.IsAttacking)
-            {
-                // lastDamageTime = Time.time;
-                // hitEnemies.Add(enemy);
-                // yield return new WaitUntil(() => !so.targetEmpty);                
+            {        
                                 
                 int hp = enemy.GetComponent<Health>().PublicHp;
                 Debug.Log(weaponDamage);
                 Debug.Log(hp);
-                // Debug.Log(so.target);
-                // Debug.Log(so.hasHit);
-                // Debug.Log(so);
-                // if(so != null && so.target != null){
-                // if(so.hasHit && hp <= weaponDamage){
-                    // Debug.Log("slice!");
-                    // so.slice(so.target);
-                //  }
-                //  }
 
                 if(hp <= weaponDamage)
                 {
@@ -77,13 +65,13 @@ public class CollisionDetection : MonoBehaviour
     
 
     private void OnTriggerExit(Collider other) {
-        StartCoroutine(DealDamage(other.gameObject, false));   
+        DealDamage(other.gameObject, false);   
     }
 
     private void OnTriggerStay(Collider other) {
-        StartCoroutine(DealDamage(other.gameObject, false)); 
+        DealDamage(other.gameObject, false); 
     }
     private void OnTriggerEnter(Collider other) {
-        StartCoroutine(DealDamage(other.gameObject, true)); 
+        DealDamage(other.gameObject, true); 
     }
 }

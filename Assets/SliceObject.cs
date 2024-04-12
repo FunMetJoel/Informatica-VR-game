@@ -42,12 +42,6 @@ public class SliceObject : MonoBehaviour
             targetEmpty = false;
         }
         hasHit = Physics.Raycast(startSlicePoint.position, (endSlicePoint.position - startSlicePoint.position).normalized, out RaycastHit hit) && wc.IsAttacking &&  ( hit.collider.CompareTag("Cut") || hit.collider.CompareTag("Enemy"));
-        // if(hasHit && targetEmpty)
-        // {
-            // Debug.Log("Target set");
-            // target = hit.transform.gameObject;
-        // }
-
         
         if(hasHit && hit.collider.CompareTag("Cut"))
         {
