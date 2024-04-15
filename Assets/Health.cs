@@ -9,6 +9,14 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+
+   
+
+    public SpawnGameObject sgo;
+
+     void Start(){
+        sgo = FindObjectOfType<SpawnGameObject>();
+    }
     [SerializeField] private int MaxHealth;
     [SerializeField] private int Hp;
 
@@ -31,6 +39,7 @@ public class Health : MonoBehaviour
             }
             if (Hp <= 0)
             {
+                sgo.SpawnObject(transform.position);
                 Died?.Invoke();
             }
         }

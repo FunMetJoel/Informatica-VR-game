@@ -8,7 +8,6 @@ using JetBrains.Annotations;
 
 public class SliceObject : MonoBehaviour
 {
-    public CollisionDetection cd;
     public WeaponController wc;
 
     public Transform startSlicePoint;

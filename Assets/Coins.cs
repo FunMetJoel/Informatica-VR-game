@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    public int coins;
+    public int coins = 100;
 
 
 
@@ -24,6 +24,7 @@ public class Coins : MonoBehaviour
     {
         if(amount <= coins)
         {
+            Debug.Log($"Removing {amount} of coins");
             removeCoins(amount);
         }
         else
@@ -33,7 +34,7 @@ public class Coins : MonoBehaviour
     }
 
     public void addCoins(int amount) => coins += amount;
-    public void removeCoins(int amount) => coins += amount;
+    public void removeCoins(int amount) => coins -= amount;
     
 
     

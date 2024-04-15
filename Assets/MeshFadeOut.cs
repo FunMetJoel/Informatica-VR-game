@@ -8,7 +8,7 @@ public class MeshFadeOut : MonoBehaviour
     private Renderer meshRenderer = default;
     private Color newColor = default;
 
-    [SerializeField] private float waitBeforeFade = 1.5f;
+    [SerializeField] private float waitBeforeFade = 2.0f;
     [SerializeField] private float fadeDelay = 3f;
     [SerializeField] private float currentAlpha = 1;
     [SerializeField] private float requiredAlpha = 0;
