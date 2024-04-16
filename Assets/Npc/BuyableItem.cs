@@ -8,6 +8,7 @@ public class BuyableItem : MonoBehaviour
     public Coins c;
 
     private Dictionary<string, int> Items = new Dictionary<string, int>();    
+    //                 item    cost
 
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class BuyableItem : MonoBehaviour
             sgo.SpawnObject(transform.position);
             item.tag = "Untagged";
             string itemName = item.name;
-            c.buy(Items[itemName]);
+            c.buy(Items[itemName], itemName, item);
             
     }
 

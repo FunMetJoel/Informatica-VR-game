@@ -14,13 +14,20 @@ public class Npc : MonoBehaviour
     private string npc;
     private bool interactionStarted = false;
     private Dictionary<string, List<string>> npcTextLists = new Dictionary<string, List<string>>();    
+    private Dictionary<string, List<string>> npcBuyTextLists = new Dictionary<string, List<string>>();    
+    private Dictionary<string, List<string>> npcCannotBuyTextLists = new Dictionary<string, List<string>>();    
     
     
     
     // Start is called before the first frame update
     void Start()
     {
+        // henk
         npcTextLists["Henk"] = new List<string> {"Geday Mate!", "Yodiyow gamer hoe is hett", "Dit is mijn tweede zin", "Dit is mijn derde zin." , "Vierde zin", "Vijfde zin"};
+        npcBuyTextLists["Henk"] = new List<string> {"Thank you for your purchase mate!", "Thanks Mate!"};
+        npcCannotBuyTextLists["Henk"] = new List<string> {"Oyy mate you don't have enough money to buy that!", "Not enough Money Mate!"};
+        
+        // alice
         npcTextLists["Alice"] = new List<string> {"Text for Alice"};
 
         wc = GetComponentInChildren<WeaponController>();
@@ -64,11 +71,35 @@ public class Npc : MonoBehaviour
     interactionStarted = false;
     }
 
+
+    public void buyInteraction(string itemBought , bool canBuy)
+    {
+        if(canBuy)
+        {
+            List<string> npcBuyText = npcBuyTextLists[npc];
+            st.header = npc;
+            st.textValue = npcBuyText[Random.Range(0, npcBuyText.Count)];
+        }
+        else
+        {
+            List<string> npcCannotBuyText = npcCannotBuyTextLists[npc];
+            st.header = npc;
+            st.textValue = npcCannotBuyText[Random.Range(0, npcCannotBuyTextLists.Count)];
+        }
+    }
+
+
+
+
     private void OnTriggerExit(Collider other) {
-        InRange = false;
-        st.header = null;
-        st.textValue = null;
-        wc.CanAttack = true;
+        if(other.tag == "Npc")
+        {
+            Debug.Log("Exit");
+            InRange = false;
+            StartCoroutine(st.fadeOutText());
+            wc.CanAttack = true;
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other) {

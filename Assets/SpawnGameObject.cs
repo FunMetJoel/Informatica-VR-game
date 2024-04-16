@@ -16,10 +16,6 @@ public class SpawnGameObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnObject(transform.position);
-        }
     }
 
     public void SpawnObject(Vector3 spawnPosition)

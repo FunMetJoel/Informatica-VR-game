@@ -44,19 +44,23 @@ public class MeshFadeOut : MonoBehaviour
     private IEnumerator FadeObject(float currentAlpha, float requiredAlpha, float fadeTime)
     {
         yield return new WaitForSeconds(waitBeforeFade);
+        
+        // Get all renderers of the object and its children
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
     
-        // Get all materials of the object
-        Material[] materials = meshRenderer.materials;
-    
-        // Fade out each material simultaneously
+        // Fade out each material of each renderer simultaneously
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / fadeTime)
         {
-            // Interpolate alpha value for each material
-            for (int i = 0; i < materials.Length; i++)
+            // Interpolate alpha value for each material of each renderer
+            foreach (Renderer renderer in renderers)
             {
-                Color color = materials[i].color;
-                color.a = Mathf.Lerp(currentAlpha, requiredAlpha, t);
-                materials[i].color = color;
+                Material[] materials = renderer.materials;
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    Color color = materials[i].color;
+                    color.a = Mathf.Lerp(currentAlpha, requiredAlpha, t);
+                    materials[i].color = color;
+                }
             }
     
             yield return null;

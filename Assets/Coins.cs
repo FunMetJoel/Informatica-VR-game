@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
+    public Npc npc;
     public int coins = 100;
 
 
@@ -11,7 +12,8 @@ public class Coins : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        npc = GetComponentInChildren<Npc>();
+
     }
 
     // Update is called once per frame
@@ -20,15 +22,20 @@ public class Coins : MonoBehaviour
         
     }
 
-    public void buy(int amount)
+    public void buy(int amount, string itemBought, GameObject item)
     {
         if(amount <= coins)
         {
+            bool enoughMoney = true;
             Debug.Log($"Removing {amount} of coins");
             removeCoins(amount);
+            npc.buyInteraction(itemBought, enoughMoney);
         }
         else
         {
+            item.AddComponent<MeshFadeOut>(); 
+            bool enoughMoney = false;
+            npc.buyInteraction(itemBought, enoughMoney);
             Debug.Log("You dont have enough money to buy this item");
         }
     }
