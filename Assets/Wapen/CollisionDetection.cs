@@ -38,7 +38,7 @@ public class CollisionDetection : MonoBehaviour
         }
         if(enemy.tag == "Enemy")
         {
-        if ((Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy)) && wc.IsAttacking)
+        if ((Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy))) //&& wc.IsAttacking)
             {        
                                 
                 int hp = enemy.GetComponent<Health>().PublicHp;

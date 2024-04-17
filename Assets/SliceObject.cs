@@ -8,7 +8,7 @@ using JetBrains.Annotations;
 
 public class SliceObject : MonoBehaviour
 {
-    public WeaponController wc;
+    //public WeaponController wc;
 
     public Transform startSlicePoint;
     public Transform endSlicePoint;
@@ -40,7 +40,7 @@ public class SliceObject : MonoBehaviour
         else{
             targetEmpty = false;
         }
-        hasHit = Physics.Raycast(startSlicePoint.position, (endSlicePoint.position - startSlicePoint.position).normalized, out RaycastHit hit) && wc.IsAttacking &&  ( hit.collider.CompareTag("Cut") || hit.collider.CompareTag("Enemy"));
+        hasHit = Physics.Raycast(startSlicePoint.position, (endSlicePoint.position - startSlicePoint.position).normalized, out RaycastHit hit) &&  ( hit.collider.CompareTag("Cut") || hit.collider.CompareTag("Enemy"));
         
         if(hasHit && hit.collider.CompareTag("Cut"))
         {
@@ -53,13 +53,19 @@ public class SliceObject : MonoBehaviour
 
     public void slice(GameObject target)
     {
+        Debug.Log(target);
+
         Vector3 velocity = velocityEstimator.GetVelocityEstimate();
+        Debug.Log(velocity);
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity);
         planeNormal.Normalize();
+        Debug.Log(planeNormal);
 
         SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
+        Debug.Log(hull);
 
-        if(hull !=null)
+
+        if (hull !=null)
         {
             GameObject upperHull = hull.CreateUpperHull(target, cutMaterial);
             setupSlicedComponent(upperHull);

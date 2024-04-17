@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
             }
             if (Hp <= 0)
             {
-                sgo.SpawnObject(transform.position);
+                //sgo.SpawnObject(transform.position);
                 Died?.Invoke();
             }
         }
