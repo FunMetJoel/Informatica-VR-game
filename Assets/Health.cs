@@ -39,7 +39,9 @@ public class Health : MonoBehaviour
             }
             if (Hp <= 0)
             {
-                //sgo.SpawnObject(transform.position);
+                if(gameObject.CompareTag("Enemy")){
+                    sgo.SpawnObject(transform.position);   
+                }
                 Died?.Invoke();
             }
         }

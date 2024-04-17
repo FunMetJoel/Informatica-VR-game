@@ -12,17 +12,13 @@ public class SliceObject : MonoBehaviour
 
     public Transform startSlicePoint;
     public Transform endSlicePoint;
-    public LayerMask sliceableLayer;
     public VelocityEstimator velocityEstimator;
-
     public Material cutMaterial;
-
     public GameObject target;
 
     public float cutForce = 2000;
 
-    public bool hasHit = false;
-    public bool targetEmpty = true;
+    private bool hasHit = false;
 
 
     // Start is called before the first frame update
@@ -34,12 +30,6 @@ public class SliceObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(target == null){
-            targetEmpty = true;
-        }
-        else{
-            targetEmpty = false;
-        }
         hasHit = Physics.Raycast(startSlicePoint.position, (endSlicePoint.position - startSlicePoint.position).normalized, out RaycastHit hit) &&  ( hit.collider.CompareTag("Cut") || hit.collider.CompareTag("Enemy"));
         
         if(hasHit && hit.collider.CompareTag("Cut"))

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1831913774074964896}
   - component: {fileID: 1831913774074964903}
   - component: {fileID: 1831913774074964902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1831913774692680084}
   - component: {fileID: 1831913774692680091}
   - component: {fileID: 1831913774692680090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831913774717156407}
   - component: {fileID: 1831913774717156406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Frikandellen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 1831913775017853894}
   - component: {fileID: 1831913775017853893}
   - component: {fileID: 1831913775017853892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
