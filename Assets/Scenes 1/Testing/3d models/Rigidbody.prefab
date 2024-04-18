@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 7386117003418914611}
   - component: {fileID: 7386117003418914608}
   - component: {fileID: 7386117003418914609}
+  - component: {fileID: 8075308852283774361}
+  - component: {fileID: 4538983178407879590}
+  - component: {fileID: 3802622489214195010}
   m_Layer: 0
   m_Name: Rigidbody
   m_TagString: Untagged
@@ -164,6 +167,46 @@ MonoBehaviour:
   Died:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8075308852283774361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386117003418914606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6471ae5742d533149b5e079e6b9c2c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 0}
+  coins: 100
+--- !u!114 &4538983178407879590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386117003418914606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6968a25c04661242801cd328b212e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  st: {fileID: 0}
+  wc: {fileID: 0}
+--- !u!114 &3802622489214195010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386117003418914606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d95f32eb8e8a8a44a0400cea923d39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7386117004564005389
 GameObject:
   m_ObjectHideFlags: 0

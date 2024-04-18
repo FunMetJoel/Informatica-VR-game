@@ -17,6 +17,9 @@ public class BuyableItem : MonoBehaviour
         sgo = FindObjectOfType<SpawnGameObject>();
         c = FindObjectOfType<Coins>();
         
+
+    //             item         cost
+
         Items["Frikandellen"] = 10;
 
 
@@ -41,6 +44,8 @@ public class BuyableItem : MonoBehaviour
     {
         if(other.tag == "BuyableItem")
         {
+            Debug.Log("BuyTheStuffsss");
+
             buyItem(other.gameObject);
         }
     }

@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Npc : MonoBehaviour
 {
     public ShowText st;
@@ -136,13 +137,13 @@ public class Npc : MonoBehaviour
     
 
         wc = GetComponentInChildren<WeaponController>();
-        st = GetComponentInChildren<ShowText>();    
+        st = FindObjectOfType<ShowText>();    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (InRange && Input.GetKeyDown(KeyCode.E) && !interactionStarted)
+        if (InRange && (Input.GetKeyDown(KeyCode.E) ||Input.GetButtonDown("Oculus_A_Button")) && !interactionStarted)
         {
             StartCoroutine(Interaction());       
         }
@@ -217,14 +218,14 @@ public class Npc : MonoBehaviour
                 st.header = "Player";
                 st.textValue = questions[i];
                 // if(Input.GetButtonDown(buttonName))
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2));
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("Oculus_A_Button") || Input.GetButtonDown("Oculus_B_Button"));
 
-                if(Input.GetKey(KeyCode.Alpha1))
+                if(Input.GetKey(KeyCode.Alpha1) || Input.GetButton("Oculus_A_Button"))
                 {
                     st.header = npc;
                     st.textValue = responseAList[i];
                 }
-                else if(Input.GetKey(KeyCode.Alpha2))
+                else if(Input.GetKey(KeyCode.Alpha2) || Input.GetButton("Oculus_B_Button"))
                 {
                     st.header = npc;
                     st.textValue = responseBList[i];
@@ -293,7 +294,7 @@ public class Npc : MonoBehaviour
             Debug.Log("Exit");
             InRange = false;
             StartCoroutine(st.fadeOutText());
-            wc.CanAttack = true;
+            // wc.CanAttack = true;
         }
         
     }
@@ -301,7 +302,7 @@ public class Npc : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Npc")
         {
-            wc.CanAttack = false;
+            // wc.CanAttack = false;
             InRange = true;
             npc = other.gameObject.name;
             npc = npc.Remove(0,3);

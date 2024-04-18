@@ -140,7 +140,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &334323378
 GameObject:
@@ -444,18 +444,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130885c36e66254ab13a035e7eb947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wc: {fileID: 2092501968}
   startSlicePoint: {fileID: 1833676633}
   endSlicePoint: {fileID: 1991450907}
-  sliceableLayer:
-    serializedVersion: 2
-    m_Bits: 0
   velocityEstimator: {fileID: 1991450908}
   cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
   target: {fileID: 0}
   cutForce: 2000
-  hasHit: 0
-  targetEmpty: 1
 --- !u!95 &530463651
 Animator:
   serializedVersion: 5

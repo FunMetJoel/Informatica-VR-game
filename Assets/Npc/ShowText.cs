@@ -27,7 +27,7 @@ public class ShowText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textElement = GetComponentInChildren<TMP_Text>();
+        textElement = FindObjectOfType<TMP_Text>();
 
         Completeheader = GenerateHeaderText(header);
         combinedText = Completeheader + textValue;
