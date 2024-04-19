@@ -9,13 +9,14 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-
-   
+    [SerializeField] private Healthbar _healthbar;
 
     public SpawnGameObject sgo;
 
      void Start(){
         sgo = FindObjectOfType<SpawnGameObject>();
+        _healthbar.UpdateHealthBar(MaxHealth,Hp);
+
     }
     [SerializeField] private int MaxHealth;
     [SerializeField] private int Hp;
@@ -58,11 +59,12 @@ public class Health : MonoBehaviour
     }
 
 
+        
+
+
     public void Damage(int amount) => PublicHp -= amount;
     public void Heal(int amount) => PublicHp += amount;
     public void Healfull() => PublicHp = MaxHealth;
     public void Kill() => PublicHp = 0;
     public void Adjust(int value) => PublicHp -= value;
-
 }
-
