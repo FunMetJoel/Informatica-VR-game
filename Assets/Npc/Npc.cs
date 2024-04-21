@@ -13,6 +13,11 @@ public class Npc : MonoBehaviour
     public ShowText st;
     public WeaponController wc;
 
+
+    public InputActionProperty buttonPressA;
+    public InputActionProperty buttonPressB;
+
+
     private bool InRange = false;
     private string npc;
     private bool interactionStarted = false;
@@ -143,7 +148,9 @@ public class Npc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InRange && (Input.GetKeyDown(KeyCode.E) ||Input.GetButtonDown("Oculus_A_Button")) && !interactionStarted)
+
+        // InputActionPropertys
+        if (InRange && (Input.GetKeyDown(KeyCode.E) ||buttonPressA.action.triggered) && !interactionStarted)
         {
             StartCoroutine(Interaction());       
         }
@@ -218,14 +225,14 @@ public class Npc : MonoBehaviour
                 st.header = "Player";
                 st.textValue = questions[i];
                 // if(Input.GetButtonDown(buttonName))
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("Oculus_A_Button") || Input.GetButtonDown("Oculus_B_Button"));
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || buttonPressA.action.triggered || buttonPressB.action.triggered);
 
-                if(Input.GetKey(KeyCode.Alpha1) || Input.GetButton("Oculus_A_Button"))
+                if(Input.GetKey(KeyCode.Alpha1) || buttonPressA.action.triggered)
                 {
                     st.header = npc;
                     st.textValue = responseAList[i];
                 }
-                else if(Input.GetKey(KeyCode.Alpha2) || Input.GetButton("Oculus_B_Button"))
+                else if(Input.GetKey(KeyCode.Alpha2) || buttonPressB.action.triggered)
                 {
                     st.header = npc;
                     st.textValue = responseBList[i];

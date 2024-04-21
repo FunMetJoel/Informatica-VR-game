@@ -28,7 +28,6 @@ public class SpawnGameObject : MonoBehaviour
         spawnedObject.transform.position = spawnPosition;
         spawnedObject.name = prefabName;
 
-
        
     }
 }
