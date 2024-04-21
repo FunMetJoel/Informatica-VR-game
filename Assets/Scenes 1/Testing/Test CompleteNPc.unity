@@ -3496,6 +3496,32 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7995178753535697531, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  buttonPressX:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Press X
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3caf8089-071f-4154-a6b8-5d7821924215
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -967138568156414367, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  buttonPressY:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Press Y
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 24265c9e-2884-4036-a7fd-d461484da9db
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6798542248489769793, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!114 &1783699752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3803,6 +3829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e829227c7ad8b834a97a62eb7ef501aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthbar: {fileID: 0}
   sgo: {fileID: 0}
   MaxHealth: 10
   Hp: 0
@@ -4623,6 +4650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e829227c7ad8b834a97a62eb7ef501aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthbar: {fileID: 0}
   sgo: {fileID: 0}
   MaxHealth: 10
   Hp: 0

@@ -16,6 +16,10 @@ public class Npc : MonoBehaviour
 
     public InputActionProperty buttonPressA;
     public InputActionProperty buttonPressB;
+    public InputActionProperty buttonPressX;
+    public InputActionProperty buttonPressY;
+
+
 
 
     private bool InRange = false;
@@ -183,7 +187,7 @@ public class Npc : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
 
-            yield return new WaitUntil(() => Input.anyKeyDown && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D) || !InRange);
+            yield return new WaitUntil(() => !InRange || buttonPressA.action.triggered || buttonPressB.action.triggered || buttonPressX.action.triggered || buttonPressY.action.triggered && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D));
 
             if (!InRange)
             {
@@ -212,7 +216,7 @@ public class Npc : MonoBehaviour
             {
             yield return new WaitForSeconds(0.1f);
 
-            yield return new WaitUntil(() => Input.anyKeyDown && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D) || !InRange);
+            yield return new WaitUntil(() => !InRange || buttonPressA.action.triggered || buttonPressB.action.triggered || buttonPressX.action.triggered || buttonPressY.action.triggered && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D));
 
             if (!InRange)
             {
@@ -225,17 +229,21 @@ public class Npc : MonoBehaviour
                 st.header = "Player";
                 st.textValue = questions[i];
                 // if(Input.GetButtonDown(buttonName))
+                yield return new WaitForSeconds(0.1f);
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || buttonPressA.action.triggered || buttonPressB.action.triggered);
 
-                if(Input.GetKey(KeyCode.Alpha1) || buttonPressA.action.triggered)
+                if(Input.GetKey(KeyCode.Alpha1) || buttonPressA.action.inProgress)
                 {
                     st.header = npc;
                     st.textValue = responseAList[i];
                 }
-                else if(Input.GetKey(KeyCode.Alpha2) || buttonPressB.action.triggered)
+                else if(Input.GetKey(KeyCode.Alpha2) || buttonPressB.action.inProgress)
                 {
                     st.header = npc;
                     st.textValue = responseBList[i];
+                }
+                else {
+                    Debug.Log("NO button pressed!");
                 }
             }
             }
@@ -249,12 +257,11 @@ public class Npc : MonoBehaviour
 
     private IEnumerator endInteractionTexts()
     {
-        Debug.Log("End interaction started");
         foreach(string text in npcTextLists[npc][endInteraction])
         {
             yield return new WaitForSeconds(0.1f);
 
-            yield return new WaitUntil(() => Input.anyKeyDown && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D) || !InRange);
+            yield return new WaitUntil(() => !InRange || buttonPressA.action.triggered || buttonPressB.action.triggered || buttonPressX.action.triggered || buttonPressY.action.triggered && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D));
 
             if (!InRange)
             {
@@ -268,7 +275,6 @@ public class Npc : MonoBehaviour
                 st.header = npc;
             }
         }
-
     }
 
 
