@@ -5,22 +5,21 @@ using UnityEngine;
 public class SpawnGameObject : MonoBehaviour
 { 
     
-    private string prefabName = "Frikandellen";
     private GameObject SpawnPrefab;
     // Start is called before the first frame update
-    void Start()
-    {
-        SpawnPrefab = Resources.Load<GameObject>(prefabName);
-    }
+    // void Start()
+    // {
+    // }
 
     // Update is called once per frame
     void Update()
     {
     }
 
-    public void SpawnObject(Vector3 spawnPosition)
+    public void SpawnObject(Vector3 spawnPosition, string prefabName)
     {
-        Debug.Log("Spawn");
+        SpawnPrefab = Resources.Load<GameObject>(prefabName);
+        
 
         // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         GameObject spawnedObject = Instantiate(SpawnPrefab);

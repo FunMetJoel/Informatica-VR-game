@@ -40,10 +40,10 @@ public class Npc : MonoBehaviour
 
     
     // Enite items for sale
-    const string healingPotion = "healingPotion";
-    const string apple = "apple";
-    const string krakas = "krakas";
-    const string torch = "torch";
+    const string healingPotion = "HealingPotion";
+    const string apple = "Apple";
+    const string krakas = "Krakas";
+    const string torch = "Torch";
 
 
 

@@ -20,7 +20,14 @@ public class BuyableItem : MonoBehaviour
 
     //             item         cost
 
-        Items["Frikandellen"] = 10;
+        Items["HealthPotion"] = 20;
+        Items["Karkas"] = 50;
+        Items["ResistancePotion"] = 50;
+        Items["SlowPotion"] = 70;
+        Items["Torch"] = 30;
+        Items["Apple"] = 10;
+
+
 
 
     }
@@ -32,7 +39,7 @@ public class BuyableItem : MonoBehaviour
             // Current position of object you buy
             // sgo.SpawnObject(other.transform.position);
             // Original position of the scritp
-            sgo.SpawnObject(transform.position);
+            sgo.SpawnObject(transform.position , item.name);
             item.tag = "Untagged";
             string itemName = item.name;
             c.buy(Items[itemName], itemName, item);
