@@ -9,13 +9,13 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private Healthbar _healthbar;
+ 
 
     public SpawnGameObject sgo;
  
      void Start(){
         sgo = FindObjectOfType<SpawnGameObject>();
-        _healthbar.UpdateHealthBar(MaxHealth,Hp);
+     
 
     }
     [SerializeField] private int MaxHealth;
