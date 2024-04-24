@@ -9,7 +9,8 @@ public class CollisionDetection : MonoBehaviour
     public float lastDamageTime = 0f;
     public float damageCooldown = 0.55f;
     public int weaponDamage = 1;
-    private List<GameObject> hitEnemies = new List<GameObject>();    
+    private List<GameObject> hitEnemies = new List<GameObject>();
+    public bool isPlayerWeapon = false;
     
     //public GameObject HitParticle;
 
@@ -36,7 +37,7 @@ public class CollisionDetection : MonoBehaviour
         {
             return;
         }
-        if(enemy.tag == "Enemy")
+        if((enemy.tag == "Enemy" && isPlayerWeapon) || (enemy.tag == "Player" && !isPlayerWeapon))
         {
         if ((Time.time - lastDamageTime >= damageCooldown || !hitEnemies.Contains(enemy))) //&& wc.IsAttacking)
             {        

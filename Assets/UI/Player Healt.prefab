@@ -168,6 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1911527ffeb0ee94fb47ca48f4aff3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxShield: 100
+  health: 125
+  RedHeart: {fileID: 3673068087565704300}
+  YellowHeart: {fileID: 1989902492917927841}
 --- !u!1 &3673068089205123965
 GameObject:
   m_ObjectHideFlags: 0
