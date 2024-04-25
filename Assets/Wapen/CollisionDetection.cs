@@ -11,9 +11,14 @@ public class CollisionDetection : MonoBehaviour
     public int weaponDamage = 1;
     private List<GameObject> hitEnemies = new List<GameObject>();
     public bool isPlayerWeapon = false;
-    
+
     //public GameObject HitParticle;
 
+
+    private void Start()
+    {
+        so = FindObjectOfType<SliceObject>();
+    }
 
     private void Update()
     {
