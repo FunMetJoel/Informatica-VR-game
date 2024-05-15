@@ -261,6 +261,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c74492861b815a4899070c86f881dc8, type: 3}
+--- !u!1 &1803939418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2093373996331359009, guid: 0add1cc71318cc04c825545d7c198503,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084180264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1803939419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2093373996331359008, guid: 0add1cc71318cc04c825545d7c198503,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084180264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1803939426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803939418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524489f1f394a6d4dbe63ef3017fae2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSwordAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Spawn Sword
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 4285a2e3-0196-496b-bb5f-583e8e959370
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -967138568156414367, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  spawnWapen: {fileID: 6542553041053559931, guid: ded68187da6c2fd48be610e5b8d61c99,
+    type: 3}
+  spawnWapenTransform: {fileID: 1803939419}
 --- !u!1 &1936809056
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RondeKamer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040527285475144217, guid: 517b56b74ae767a4ca455d697019f5d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cut
       objectReference: {fileID: 0}
     - target: {fileID: 6208443628755451512, guid: 517b56b74ae767a4ca455d697019f5d2,
         type: 3}
