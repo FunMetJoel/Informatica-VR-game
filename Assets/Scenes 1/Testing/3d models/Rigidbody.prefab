@@ -195,6 +195,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   st: {fileID: 0}
   wc: {fileID: 0}
+  buttonPressA:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Press A
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: bcd7d4e9-34ad-4e0e-b4f1-98b4476d94a2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  buttonPressB:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Press B
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f7c1df46-e4e2-4dce-891c-4c7f938d9431
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  buttonPressX:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Press X
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 718cb247-0de6-4ce8-adab-64fdbe3d9078
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  buttonPressY:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Press Y
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: afb4795c-37a2-409a-9e0c-522a04f85a15
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &3802622489214195010
 MonoBehaviour:
   m_ObjectHideFlags: 0

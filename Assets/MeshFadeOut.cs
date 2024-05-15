@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class MeshFadeOut : MonoBehaviour
@@ -8,11 +9,10 @@ public class MeshFadeOut : MonoBehaviour
     private Renderer meshRenderer = default;
     private Color newColor = default;
 
-    [SerializeField] private float waitBeforeFade = 2.0f;
-    [SerializeField] private float fadeDelay = 3f;
+    [SerializeField] public float waitBeforeFade = 2.0f;
+    [SerializeField] public float fadeDelay = 3f;
     [SerializeField] private float currentAlpha = 1;
     [SerializeField] private float requiredAlpha = 0;
-
     void Start()
     {
         targetMaterial = Resources.Load<Material>("Transparent");
@@ -43,10 +43,10 @@ public class MeshFadeOut : MonoBehaviour
 
     private IEnumerator FadeObject(float currentAlpha, float requiredAlpha, float fadeTime)
     {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
         yield return new WaitForSeconds(waitBeforeFade);
         
         // Get all renderers of the object and its children
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
     
         // Fade out each material of each renderer simultaneously
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / fadeTime)
@@ -108,12 +108,25 @@ void CopyMaterialSettings()
                 newMaterial.SetColor("_EmissionColor", sourceMaterial.GetColor("_EmissionColor"));
                 newMaterial.EnableKeyword("_EMISSION");
             }
+            else
+            {
+                newMaterial.EnableKeyword("_EMISSION");
+                newMaterial.SetColor("_EmissionColor", Color.black);
+                newMaterial.DisableKeyword("_EMISSION");
+            }
 
 
             if (sourceMaterial.mainTexture != null)
             {
                 newMaterial.mainTexture = sourceMaterial.mainTexture;
             }
+
+
+            // if (sourceMaterial.HasProperty("_SpecularHighlights") && sourceMaterial.GetFloat("_SpecularHighlights") == 1)
+            // {
+            //     // Do something if specular highlights are enabled
+            //     Debug.Log("Specular highlights are enabled.");
+            // }
 
 
             if (sourceMaterial.HasProperty("_Mode"))

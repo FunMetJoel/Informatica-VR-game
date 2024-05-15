@@ -5,6 +5,7 @@ using EzySlice;
 using UnityEngine.InputSystem;
 using TMPro;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class SliceObject : MonoBehaviour
 {
@@ -76,5 +77,27 @@ public class SliceObject : MonoBehaviour
         slicedObject.AddComponent<MeshFadeOut>();
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
-    
+
+    // void OnTriggerEnter(Collider other)
+    // {        
+        // if(other.tag == "Cut")
+        // {
+            // MeshCollider meshCollider = GetComponent<MeshCollider>();
+            // if (meshCollider != null)
+            // {
+                // meshCollider.isTrigger = true;
+            // }
+        // }
+    // }
+// 
+    //    void OnTriggerExit(Collider other)
+    // {
+        // MeshCollider meshCollider = GetComponent<MeshCollider>();
+        // if (meshCollider != null)
+        // {
+            // meshCollider.isTrigger = false;
+        // }
+    // }
+
+
 }

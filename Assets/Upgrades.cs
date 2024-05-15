@@ -20,7 +20,7 @@ public class Upgrades : MonoBehaviour
     public void apple()
     {
         double speed = 10;
-        speed = speed * 1.2; //?????
+        speed *= 1.2; //?????
     }
 
 
