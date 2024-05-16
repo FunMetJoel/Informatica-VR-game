@@ -9,18 +9,17 @@ public class WeaponController : MonoBehaviour
     public float AttackCooldown = 1.0f;
     public AudioClip SwordAttackSound;
     public bool IsAttacking = false;
+    
+    private bool Inrange = false;
 
 
     void Update() 
-    {    
-     if(Input.GetMouseButtonDown(0))
-     {
-        if(CanAttack)
+    {   
+        if(CanAttack && Inrange)
         {
             SwordAttack();
         }
-     }   
-    }
+    }  
 
     public void SwordAttack()
     {
@@ -48,4 +47,15 @@ public class WeaponController : MonoBehaviour
 
     }
 
+    void OnTriggerEnter()
+    {
+        Debug.Log("Inrange");
+        Inrange = true;
+    }
+
+    void OnTriggerExit()
+    {
+        Debug.Log("uitrange & thijs houdt van mannen");
+        Inrange = false;
+    }
 }
