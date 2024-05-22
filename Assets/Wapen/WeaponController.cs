@@ -15,7 +15,7 @@ public class WeaponController : MonoBehaviour
 
     void Update() 
     {   
-        if(CanAttack && Inrange)
+        if(Inrange)
         {
             SwordAttack();
         }
@@ -55,7 +55,7 @@ public class WeaponController : MonoBehaviour
 
     void OnTriggerExit()
     {
-        Debug.Log("uitrange & thijs houdt van mannen");
+        Debug.Log("uitrange");
         Inrange = false;
     }
 }
