@@ -47,15 +47,22 @@ public class WeaponController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Inrange");
-        Inrange = true;
+        if(other.tag == "Player")
+        {
+            Debug.Log("Inrange");
+            Inrange = true;
+        }
+        
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider other)
     {
-        Debug.Log("uitrange");
-        Inrange = false;
+        if (other.tag == "Player")
+        {
+            Debug.Log("uitrange");
+            Inrange = false;
+        }
     }
 }
