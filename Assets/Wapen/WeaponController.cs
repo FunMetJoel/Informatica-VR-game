@@ -15,7 +15,7 @@ public class WeaponController : MonoBehaviour
 
     void Update() 
     {   
-        if(Inrange)
+        if(Inrange && CanAttack)
         {
             SwordAttack();
         }
@@ -25,7 +25,7 @@ public class WeaponController : MonoBehaviour
     {
         IsAttacking = true;
         CanAttack = false;
-        Animator anim = Sword.GetComponent<Animator>();
+        Animator anim = GetComponentInChildren<Animator>();
         anim.SetTrigger("Attack");
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(SwordAttackSound);
