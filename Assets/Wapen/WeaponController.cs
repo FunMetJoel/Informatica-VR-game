@@ -9,24 +9,23 @@ public class WeaponController : MonoBehaviour
     public float AttackCooldown = 1.0f;
     public AudioClip SwordAttackSound;
     public bool IsAttacking = false;
+    
+    private bool Inrange = false;
 
 
     void Update() 
-    {    
-     if(Input.GetMouseButtonDown(0))
-     {
-        if(CanAttack)
+    {   
+        if(Inrange && CanAttack)
         {
             SwordAttack();
         }
-     }   
-    }
+    }  
 
     public void SwordAttack()
     {
         IsAttacking = true;
         CanAttack = false;
-        Animator anim = Sword.GetComponent<Animator>();
+        Animator anim = GetComponentInChildren<Animator>();
         anim.SetTrigger("Attack");
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(SwordAttackSound);
@@ -48,4 +47,22 @@ public class WeaponController : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Debug.Log("Inrange");
+            Inrange = true;
+        }
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("uitrange");
+            Inrange = false;
+        }
+    }
 }

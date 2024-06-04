@@ -57,7 +57,7 @@ public class CollisionDetection : MonoBehaviour
                 }
                  
                 Debug.Log(enemy.name);
-                enemy.GetComponent<Animator>().SetTrigger("Hit");
+                // enemy.GetComponent<Animator>().SetTrigger("Hit");
                 Debug.Log(enemy.GetComponent<Health>().PublicHp);
                 enemy.GetComponent<Health>().Damage(weaponDamage);
                 lastDamageTime = Time.time;
