@@ -16,6 +16,7 @@ public class MasterRoomGenerator : MonoBehaviour
     public List<DungeonRoomGeneration> possibleRooms = new List<DungeonRoomGeneration>();
 
     [SerializeField] private List<Transform> RoomEndPoints = new List<Transform>();
+    [SerializeField] private List<Transform> OldRoomEndPoints = new List<Transform>();
 
     public bool NextIteration = false;
 
@@ -54,15 +55,16 @@ public class MasterRoomGenerator : MonoBehaviour
         if (NextIteration)
         {
             NextIteration = false;
-            for (int i = 0; i < RoomEndPoints.Count; i++)
+            OldRoomEndPoints = new List<Transform>(RoomEndPoints);
+            RoomEndPoints = new List<Transform>();
+            for (int i = 0; i < OldRoomEndPoints.Count; i++)
             {
-                spawnRandomRoom();
-                RoomEndPoints.Remove(RoomEndPoints[i]);
+                spawnRandomRoom(OldRoomEndPoints[i]);
             }
         }
     }
 
-    void spawnRandomRoom()
+    void spawnRandomRoom(Transform endpoint)
     {
         float totalWeight = 0;
         foreach (DungeonRoomGeneration room in possibleRooms)
@@ -77,7 +79,7 @@ public class MasterRoomGenerator : MonoBehaviour
             weightSum += room.RandomWeight;
             if (randomValue <= weightSum)
             {
-                spawnPrefab(room.prefab, RoomEndPoints[Random.Range(0, RoomEndPoints.Count)]);
+                spawnPrefab(room.prefab, endpoint);
                 break;
             }
         }
