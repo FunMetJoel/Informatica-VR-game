@@ -167,11 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266a4dda52593f14aa057d2831712889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePrefabs:
-  - {fileID: 1570624553410082156, guid: 06364aed243940c47b1fd97ec83d215a, type: 3}
+  possibleRooms:
+  - prefab: {fileID: 1570624553410082156, guid: 06364aed243940c47b1fd97ec83d215a,
+      type: 3}
+    RandomWeight: 5
+  - prefab: {fileID: 2758042894657807077, guid: 32c663d2214e2dd478f6185d27511953,
+      type: 3}
+    RandomWeight: 1
   RoomEndPoints:
   - {fileID: 1312948381}
   NextIteration: 0
+  Max2DDungeonSize: {x: 13, y: 10}
+  DungeonMargin: 0.5
+  MaxFloors: 5
+  FloorHeight: 3
 --- !u!1 &1876882212
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +192,7 @@ GameObject:
   - component: {fileID: 1876882215}
   - component: {fileID: 1876882214}
   - component: {fileID: 1876882213}
+  - component: {fileID: 1876882216}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +266,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876882216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876882212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2083368649
 GameObject:
   m_ObjectHideFlags: 0
