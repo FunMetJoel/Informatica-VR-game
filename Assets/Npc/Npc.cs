@@ -316,6 +316,7 @@ public class Npc : MonoBehaviour
         if(other.tag == "Npc")
         {
             // wc.CanAttack = false;
+            Debug.Log("Enter");
             InRange = true;
             npc = other.gameObject.name;
             npc = npc.Remove(0,3);
