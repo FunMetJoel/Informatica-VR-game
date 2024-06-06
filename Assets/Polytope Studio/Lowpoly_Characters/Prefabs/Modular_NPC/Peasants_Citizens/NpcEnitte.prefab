@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 4511335745954208108}
   - component: {fileID: 8135023793477219324}
   m_Layer: 0
-  m_Name: Enitte
+  m_Name: NpcEnitte
   m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

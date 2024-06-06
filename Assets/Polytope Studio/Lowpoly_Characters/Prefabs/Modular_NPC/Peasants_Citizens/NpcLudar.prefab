@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 4217330796725923808}
   - component: {fileID: 3055541494385508725}
   m_Layer: 0
-  m_Name: Ludar
+  m_Name: NpcLudar
   m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
