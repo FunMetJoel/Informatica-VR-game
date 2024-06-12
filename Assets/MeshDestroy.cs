@@ -1,53 +1,61 @@
-// using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using EzySlice;
 using UnityEngine.XR.Interaction.Toolkit;
-// using System.Numerics;
-
 
 public class MeshDestroy : MonoBehaviour
 {
-
-    public VelocityEstimator velocityEstimator;
+    // public VelocityEstimator velocityEstimator;
     public Material cutMaterial;
     public Rigidbody rb;
-    
+
     public float cutForce = 2000;
-
-
-    public int  amountOfCuts = 5;
-    public float destroyForce = 20;
-    public int cutsPreformed = 0;
+    public int amountOfCuts = 5;
+    public float destroyVelocity = 5;
+    public int cutsPerformed = 0;
     public bool destroyStarted = false;
 
     private float force;
+    private float lastforce;
     private Vector3 acceleration;
     private float mass;
-    
+
+    Vector3 lastVelocity;
+
     void Start()
-       {
-        if(destroyStarted)
-        {
-            rb = GetComponent<Rigidbody>();
-            velocityEstimator = GetComponent<VelocityEstimator>();
-        }
-       }
-
-
-
-
-   void FixedUpdate()
-   {
-
-   }
-
-
-    public void destroyMesh()
     {
-        // Get the mesh filter component of the target object
+
+        rb = GetComponent<Rigidbody>();
+        // velocityEstimator = GetComponent<VelocityEstimator>();
+        // mass = rb.mass;
+        if(destroyStarted && cutsPerformed < amountOfCuts){
+            destroyMesh();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // acceleration = (rb.velocity - lastVelocity) / Time.fixedDeltaTime;
+        // lastVelocity = rb.velocity;
+        // force = acceleration.magnitude * mass;
+        // // Debug.Log("Force ALways " + force);
+        // lastforce = force;
+
+        //     // acceleration = velocityEstimator.GetAccelerationEstimate();
+        //     // force = acceleration.magnitude * mass;
+        //     // Debug.Log("Force ALways " + force);
+        if(destroyStarted && cutsPerformed < amountOfCuts){
+            destroyMesh();
+        }    
+     
+    }
+
+     public void destroyMesh()
+    {
+        Debug.Log("MeshDestroy");
+  // Get the mesh filter component of the target object
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         if (meshFilter == null || meshFilter.mesh == null)
         {
@@ -64,7 +72,7 @@ public class MeshDestroy : MonoBehaviour
             Random.Range(bounds.min.y, bounds.max.y),
             Random.Range(bounds.min.z, bounds.max.z)
         );
-
+        randomPoint = transform.TransformPoint(randomPoint);
         // Generate a random direction as the normal vector of the plane
         Vector3 planeNormal = Random.onUnitSphere;
 
@@ -72,6 +80,9 @@ public class MeshDestroy : MonoBehaviour
 
         // Slice the target mesh using the random point and normal vector
         SlicedHull hull = target.Slice(randomPoint, planeNormal);
+        // SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
+        Debug.Log(hull);
+
 
         if (hull != null)
         {
@@ -83,6 +94,10 @@ public class MeshDestroy : MonoBehaviour
 
             // Destroy the original target object
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("Slicing did not produce a hull.");
         }
     }
 
@@ -98,7 +113,7 @@ public class MeshDestroy : MonoBehaviour
         MeshDestroy meshDestroyComponent = slicedObject.AddComponent<MeshDestroy>();
         meshDestroyComponent.destroyStarted = true;
         meshDestroyComponent.amountOfCuts = amountOfCuts;
-        meshDestroyComponent.cutsPreformed = cutsPreformed +=1;
+        meshDestroyComponent.cutsPerformed = cutsPerformed +=1;
         meshDestroyComponent.cutMaterial = cutMaterial;
 
 
@@ -111,26 +126,26 @@ public class MeshDestroy : MonoBehaviour
 
         slicedObject.AddComponent<VelocityEstimator>();
 
-        rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
+        rb.AddExplosionForce(cutForce, transform.TransformPoint(slicedObject.transform.position), 1);
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        mass = rb.mass;
-        acceleration = velocityEstimator.GetAccelerationEstimate();
-        force = acceleration.magnitude * mass;
-        if(other.tag != "Player")
+        Debug.Log("Collided");
+        if (collision.gameObject.tag != "Player")
         {
-        if((cutsPreformed <= amountOfCuts && destroyStarted) || force >= destroyForce)
+            Vector3 velocity = collision.relativeVelocity;
+            // acceleration = velocityEstimator.GetAccelerationEstimate();
+            // force = acceleration.magnitude * mass;
+            // Debug.Log("collidingforce" + lastforce);
+            float idk = velocity.magnitude;
+            Debug.Log("Velocity" + idk);
+
+            if ( idk >= destroyVelocity) //lastforce
             {
+                Debug.Log("Velocity Destroyyyy");
                 destroyMesh();
             }
         }
     }
-
 }
-
-
-
-

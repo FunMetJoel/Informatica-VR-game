@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5537520524021585605}
   - component: {fileID: 1415854423247943968}
   - component: {fileID: 5302826179546397660}
+  - component: {fileID: 8514543263231567126}
+  - component: {fileID: 773663430441746797}
   m_Layer: 7
   m_Name: Bottle_05
   m_TagString: Untagged
@@ -275,6 +277,41 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.14
   m_Center: {x: -0.0000000037252903, y: 0.12641847, z: 0}
+--- !u!114 &8514543263231567126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374151818356740834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dec823ef47c044ebee7116f98160d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 1
+--- !u!114 &773663430441746797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374151818356740834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dde1ca1575e6b346ae5b6f705627324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityEstimator: {fileID: 8514543263231567126}
+  cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
+  rb: {fileID: 1973335355559923959}
+  cutForce: 2000
+  amountOfCuts: 1
+  destroyForce: 20
+  cutsPreformed: 0
+  destroyStarted: 0
 --- !u!1 &1492887203632834082
 GameObject:
   m_ObjectHideFlags: 0
