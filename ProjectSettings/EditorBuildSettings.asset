@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/VR stuff/Samples/XR Interaction Toolkit/2.2.0/Starter Assets/DemoScene.unity
+    path: Assets/Objects/VR/Samples/XR Interaction Toolkit/2.2.0/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   - enabled: 1
-    path: Assets/Scenes 1/Testing/Test swords.unity
+    path: Assets/Scenes/Testing/Test swords.unity
     guid: bff4b4ba5e9ac2347a8561ae76c41f8b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3bd9bfda73c2bfd4f9304adf93b5d63d,
