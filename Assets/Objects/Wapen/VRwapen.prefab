@@ -119,6 +119,7 @@ MonoBehaviour:
   lastDamageTime: 0
   damageCooldown: 0.55
   weaponDamage: 1
+  isPlayerWeapon: 1
 --- !u!114 &7582004856610016794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,18 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130885c36e66254ab13a035e7eb947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wc: {fileID: 0}
   startSlicePoint: {fileID: 7449860841324014182}
   endSlicePoint: {fileID: 3223271707315727571}
-  sliceableLayer:
-    serializedVersion: 2
-    m_Bits: 0
   velocityEstimator: {fileID: 5848270785157477205}
   cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
   target: {fileID: 0}
   cutForce: 2000
-  hasHit: 0
-  targetEmpty: 1
 --- !u!1 &4392067312132311810
 GameObject:
   m_ObjectHideFlags: 0
