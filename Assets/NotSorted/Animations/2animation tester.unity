@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 239136372}
   - component: {fileID: 239136371}
   - component: {fileID: 239136370}
+  - component: {fileID: 239136376}
   m_Layer: 5
   m_Name: buttonQuit
   m_TagString: Untagged
@@ -269,7 +270,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 239136374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 7a1c5d9f945f5264697f726bd95994d5, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &239136374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +321,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239136368}
   m_CullTransparentMesh: 0
+--- !u!114 &239136376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239136368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1c5d9f945f5264697f726bd95994d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338998258
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +909,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b0658bae20c86c4da4aca4b6aeb48dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27a1b114f9674294c9d545080f660bdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1277,6 +1302,7 @@ GameObject:
   - component: {fileID: 2226219569375474831}
   - component: {fileID: 3412469171765849385}
   - component: {fileID: 6819536016548961051}
+  - component: {fileID: 6819536016548961052}
   m_Layer: 5
   m_Name: buttonPlay
   m_TagString: Untagged
@@ -1357,7 +1383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4209038522779885506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 4a4535a7790664f4a97f83ee68c803a6, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &4209038522779885509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1387,3 +1425,15 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &6819536016548961052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4209038522779885505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4535a7790664f4a97f83ee68c803a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
