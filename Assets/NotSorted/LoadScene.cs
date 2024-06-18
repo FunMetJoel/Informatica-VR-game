@@ -8,6 +8,6 @@ public class LoadScene: MonoBehaviour
     public void LoadSceneRoom()
     {
         //load the scene "Room generator" in the background
-        SceneManager.LoadSceneAsync("Room generator");
+        SceneManager.LoadSceneAsync(2);
     }
 }
