@@ -103,8 +103,7 @@ void CopyMaterialSettings()
             }
 
 
-            if (sourceMaterial.HasProperty("_EmissionColor"))
-            {
+            if (sourceMaterial.HasProperty("_EmissionColor") && sourceMaterial.IsKeywordEnabled("_EMISSION"))            {
                 newMaterial.SetColor("_EmissionColor", sourceMaterial.GetColor("_EmissionColor"));
                 newMaterial.EnableKeyword("_EMISSION");
             }

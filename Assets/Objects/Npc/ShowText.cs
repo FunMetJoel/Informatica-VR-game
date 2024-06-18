@@ -14,10 +14,12 @@ public class ShowText : MonoBehaviour
     private string combinedText;
     private string Completeheader;
 
+    public bool NewText;
+
 
     // Fade Var
     private float fadeTime = 3.5f;
-    private float currentAlpha = 1;
+    private float currentAlpha;
     private float requiredAlpha = 0;
     private float waitBeforeFade = 5f;
 
@@ -32,6 +34,7 @@ public class ShowText : MonoBehaviour
         Completeheader = GenerateHeaderText(header);
         combinedText = Completeheader + textValue;
         textElement.text = combinedText;
+        currentAlpha =  textElement.color.a;
 
     }
 
@@ -52,6 +55,14 @@ public class ShowText : MonoBehaviour
     {
         Color color = textElement.color;
         yield return new WaitForSeconds(waitBeforeFade);
+        if(NewText)
+        {
+            NewText = false;
+            color.a = 1;
+            textElement.color = color;
+
+            yield break;
+        }
 
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / fadeTime)
         {            

@@ -304,13 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dde1ca1575e6b346ae5b6f705627324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityEstimator: {fileID: 8514543263231567126}
   cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
   rb: {fileID: 1973335355559923959}
   cutForce: 2000
-  amountOfCuts: 1
-  destroyForce: 20
-  cutsPreformed: 0
+  amountOfCuts: 3
+  destroyVelocity: 5
+  cutsPerformed: 0
   destroyStarted: 0
 --- !u!1 &1492887203632834082
 GameObject:
