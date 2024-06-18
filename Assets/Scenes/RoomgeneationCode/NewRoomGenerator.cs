@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,7 +17,7 @@ public class NewRoomGenerator : MonoBehaviour
     public float iterations = 0;
     public float maxIterations = 5;
 
-    public List<GameObject> roomPrefabs = new List<GameObject>();
+    public List<WeightedRoom> roomPrefabs = new List<WeightedRoom>();
     public List<GameObject> roomSpawnPoints = new List<GameObject>();
     public GameObject bossRoomprefab;
     public GameObject endPointprefab;
@@ -50,13 +51,47 @@ public class NewRoomGenerator : MonoBehaviour
         if (NextIteration)
         {
             NextIteration = false;
-            GenerateRoom(roomSpawnPoints[0]);
+            IterateGen();
+        }
+    }
+
+    void IterateGen()
+    {
+        if (iterations < maxIterations)
+        {
+            iterations++;
+            List<GameObject> OldRoomEndPoints = new List<GameObject>(roomSpawnPoints);
+            roomSpawnPoints = new List<GameObject>();
+            for (int i = 0; i < OldRoomEndPoints.Count; i++)
+            {
+                GenerateRoom(OldRoomEndPoints[i]);
+            }
+        }
+        else
+        {
+            //GenerateBossRoom();
         }
     }
 
     object GetRandomRoomPrefab()
     {
-        return roomPrefabs[Random.Range(0, roomPrefabs.Count)];
+        float totalWeight = 0;
+        foreach (WeightedRoom room in roomPrefabs)
+        {
+            totalWeight += room.RandomWeight;
+        }
+
+        float randomValue = Random.Range(0, totalWeight);
+        float weightSum = 0;
+        foreach (WeightedRoom room in roomPrefabs)
+        {
+            weightSum += room.RandomWeight;
+            if (randomValue <= weightSum)
+            {
+                return room.prefab;
+            }
+        }
+        return null;
     }
 
 
@@ -66,7 +101,7 @@ public class NewRoomGenerator : MonoBehaviour
 
         // Get a random room prefab
         GameObject roomPrefab = (GameObject)GetRandomRoomPrefab();
-        GameObject room = Instantiate(roomPrefab, spawnPoint.transform.position, Quaternion.identity);
+        GameObject room = Instantiate(roomPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
         // Destroy the spawn point
         Destroy(spawnPoint);

@@ -1663,6 +1663,7 @@ MonoBehaviour:
   header: 
   textValue: 
   textElement: {fileID: 0}
+  NewText: 0
 --- !u!114 &4486973837928060314
 MonoBehaviour:
   m_ObjectHideFlags: 0
