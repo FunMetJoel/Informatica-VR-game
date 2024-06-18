@@ -247,6 +247,37 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 93c1f49fedfc9b441aa6f7837a0864e4, type: 2}
+--- !u!1 &285587480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285587481}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &285587481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285587480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 824737916}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &405564246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824737916}
+  - component: {fileID: 824737917}
   m_Layer: 0
   m_Name: Dungeon
   m_TagString: Untagged
@@ -438,13 +470,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824737915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9542706, y: 5.571649, z: 5.531624}
+  m_LocalPosition: {x: 0, y: 0, z: 17.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 285587481}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824737917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824737915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b806960ff2f0b747adfeff7c17360ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iterations: 0
+  maxIterations: 5
+  roomPrefabs:
+  - {fileID: 7978840827041998317, guid: d4b3504c6cbf67949a6c80ca8adeef6f, type: 3}
+  - {fileID: 3367795758967507424, guid: 8627cfc38a5dcf24994943ed88fab158, type: 3}
+  roomSpawnPoints:
+  - {fileID: 285587480}
+  bossRoomprefab: {fileID: 0}
+  endPointprefab: {fileID: 8793328639231883539, guid: 79096858c596c7b409c0a67d8e0cc226,
+    type: 3}
+  NextIteration: 0
 --- !u!4 &1113992469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4084731896643467436, guid: 3612c2b44d701c745b282b875c5bcc8d,

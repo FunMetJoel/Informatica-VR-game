@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2404052162685841111}
   - component: {fileID: 1645887564057815627}
+  - component: {fileID: 628876742856379525}
   m_Layer: 0
   m_Name: Gang
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomEndPoints:
   - {fileID: 7248109873504936522}
+--- !u!65 &628876742856379525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978840827041998317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 4, z: 3}
+  m_Center: {x: 2.6, y: 2, z: 0}
 --- !u!1001 &459668464046484485
 PrefabInstance:
   m_ObjectHideFlags: 0
