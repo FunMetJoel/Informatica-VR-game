@@ -11,6 +11,8 @@ public class MeshDestroy : MonoBehaviour
     public Material cutMaterial;
     public Rigidbody rb;
 
+    private Vector3 globalPosition;
+
     public float cutForce = 2000;
     public int amountOfCuts = 5;
     public float destroyVelocity = 5;
@@ -54,6 +56,7 @@ public class MeshDestroy : MonoBehaviour
 
      public void destroyMesh()
     {
+        globalPosition = transform.position;
         Debug.Log("MeshDestroy");
   // Get the mesh filter component of the target object
         MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -126,7 +129,10 @@ public class MeshDestroy : MonoBehaviour
 
         slicedObject.AddComponent<VelocityEstimator>();
 
-        rb.AddExplosionForce(cutForce, transform.TransformPoint(slicedObject.transform.position), 1);
+        // transform.localToWorldMatrix
+
+
+        rb.AddExplosionForce(cutForce, globalPosition, 1);
     }
 
     private void OnCollisionEnter(Collision collision)
