@@ -163,6 +163,7 @@ public class Npc : MonoBehaviour
     private IEnumerator Interaction()
     {
         interactionStarted = true;
+        st.NewText = true;
 
         yield return StartCoroutine(startInteractionTexts());
         
