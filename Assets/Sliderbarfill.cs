@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Sliderbarfill : MonoBehaviour
 {
     public Image barFill;
-    public Transform slidecube
+    public Transform slidecube;
     //public sliderLocation slide;
     //public Loadtime Xslide;
     // Update is called once per frame
