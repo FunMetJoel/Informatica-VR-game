@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[serializefield] int Xslide;
 public class sliderLocation : MonoBehaviour
 {
-    public object slidecube;
+    [serializefield] int Xslide;
+
+    private string SlideCube = "SlideCube";
 
         // Update is called once per frame 
     void Update()
     {
-        int XValue =  GetComponent<slidecube>(localposition.x);    
+        int XValue =  GetComponent<SlideCube>().transform.localPosition.x;    
         Xslide = (XValue + 45) / 90;   // hier
     }   
 }

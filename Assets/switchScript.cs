@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-private bool Switcher;     //hier
-
 public class switchScript : MonoBehaviour
 {
-    private void Update()
+    private bool Switcher; 
+    [SerializeField] GameObject MenuMain, MenuOptions;
+
+    void Update()
     {
 
-        [SerializeField] GameObject MenuMain, MenuOptions;
+        
 
         Switcher = !Switcher;
         //makes the bool reverse of what it was prior.As it will start as true, it will turn false and set the main menu on. 
