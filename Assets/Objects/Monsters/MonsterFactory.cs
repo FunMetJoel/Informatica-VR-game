@@ -35,5 +35,3 @@ public abstract class MonsterFactory : MonoBehaviour
 
 
 
-
-

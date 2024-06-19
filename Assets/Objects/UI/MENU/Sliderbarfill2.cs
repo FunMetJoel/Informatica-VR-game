@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sliderbarfill : MonoBehaviour
+public class Sliderbarfill2 : MonoBehaviour
 {
     public Image barFill;
     public Transform slidecube;
