@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class sliderLocation : MonoBehaviour
 {
-    [serializefield] int Xslide;
+    [SerializeField] int Xslide;
 
     private string SlideCube = "SlideCube";
 
