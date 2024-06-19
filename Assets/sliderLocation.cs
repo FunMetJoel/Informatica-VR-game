@@ -14,7 +14,9 @@ public class sliderLocation : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        float XValue = slidecube.localPosition.x;    
-        float Xslide = (XValue + 45) / 90;   // hier
+        //float XValue = slidecube.localPosition.x;    
+        //float Xslide = (XValue + 45) / 90;   // hier
+
+
     }   
 }
