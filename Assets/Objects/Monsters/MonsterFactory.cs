@@ -25,6 +25,9 @@ public enum MonsterType
 public abstract class MonsterFactory : MonoBehaviour
 {
     public float CurrentLevel = 1;
+    public Vector3 position;
+    public Quaternion rotation;
+
     public abstract IMonster CreateMonster();
 }
 
@@ -33,7 +36,7 @@ public class GhostMonsterFactory : MonsterFactory
     public GhostMonster ghostPrefab;
     public override IMonster CreateMonster()
     {
-        GhostMonster ghost = Instantiate(ghostPrefab);
+        GhostMonster ghost = Instantiate(ghostPrefab, position, rotation);
         ghost.Health = 100 * (1f + 0.1f * CurrentLevel);
         ghost.Speed = 5 * (1f + 0.1f * CurrentLevel);
         ghost.Damage = 10 * (1f + 0.1f * CurrentLevel);
