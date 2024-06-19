@@ -22,5 +22,6 @@ public class SpiderMonster : MonoBehaviour, IMonster
     public float Health { get; set; }
     public float Speed { get; set; }
     public float Damage { get; set; }
+    public float AttackSpeed { get; set; }
     public float AttackRange { get; set; }
 }
