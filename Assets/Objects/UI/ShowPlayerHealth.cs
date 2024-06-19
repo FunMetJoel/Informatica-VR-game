@@ -24,7 +24,7 @@ public class ShowPlayerHealth : MonoBehaviour
     void Update()
     {
         RedHeart.fillAmount = Mathf.Clamp((float)health / (float)maxHealth, 0f, 1f);
-        Debug.Log((float)health / (float)maxHealth);
+        //Debug.Log((float)health / (float)maxHealth);
         YellowHeart.fillAmount = Mathf.Clamp(((float)health - maxHealth) / (float)maxShield, 0f, 1f);
     }
 }

@@ -6,6 +6,7 @@ public class HandPresencePhysics : MonoBehaviour
 {
 
     public Transform target;
+    [SerializeField]
     private Rigidbody rb;
 
     private Collider[] handColliders;
@@ -17,17 +18,30 @@ public class HandPresencePhysics : MonoBehaviour
         handColliders = GetComponentsInChildren<Collider>();
     }
 
-    public void EnableHandColliders(bool enabled)
+    public void EnableHandColliders()
     {
         foreach (var collider in handColliders)
         {
-            collider.enabled = enabled;
+            collider.enabled = true;
+        }
+    }
+    public void DisableHandColliders()
+    {
+        foreach (var collider in handColliders)
+        {
+            collider.enabled = false;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnableColliderDelay(float delay)
     {
+        Invoke("EnableHandColliders", delay);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        //Debug.Log(target.position + " " + transform.position + " " + (target.position - transform.position) / Time.fixedDeltaTime);
         rb.velocity = (target.position - transform.position)/Time.fixedDeltaTime;
         Quaternion rotationDifference = target.rotation * Quaternion.Inverse(transform.rotation);
         rotationDifference.ToAngleAxis(out float angle, out Vector3 axis);
