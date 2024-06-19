@@ -7,7 +7,7 @@ public class switchScript : MonoBehaviour
     private bool Switcher; 
     [SerializeField] GameObject MenuMain, MenuOptions;
 
-    void Update()
+    public void Switch()
     {
 
         
