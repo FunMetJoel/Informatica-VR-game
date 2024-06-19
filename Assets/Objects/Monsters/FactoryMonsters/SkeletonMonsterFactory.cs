@@ -7,12 +7,12 @@ public class SkeletonMonsterFactory : MonsterFactory
     public SkeletonMonster skeletonPrefab;
     public override IMonster CreateMonster()
     {
-        SkeletonMonster skeleton = Instantiate(skeletonPrefab);
-        skeleton.Health = Mathf.RoundToInt( 100 * (1f + 0.1f * CurrentLevel));
-        skeleton.Speed = 5 * (1f + 0.1f * CurrentLevel);
-        skeleton.Damage = 10 * (1f + 0.1f * CurrentLevel);
-        skeleton.AttackSpeed = 1f * (1f + 0.1f * CurrentLevel);
-        skeleton.AttackRange = 1.5f * (1f + 0.1f * CurrentLevel);
+        SkeletonMonster skeleton = Instantiate(skeletonPrefab, position, rotation);
+        skeleton.Health = Mathf.RoundToInt( 40 * (1f + 0.1f * CurrentLevel));
+        skeleton.Speed = 1.2f * (1f + 0.1f * CurrentLevel);
+        skeleton.Damage = 12 * (1f + 0.1f * CurrentLevel);
+        skeleton.AttackSpeed = 0.9f * (1f + 0.1f * CurrentLevel);
+        skeleton.AttackRange = 1.2f * (1f + 0.1f * CurrentLevel);
         return skeleton;
     }
 }

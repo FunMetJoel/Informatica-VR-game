@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5476644973335940725
+--- !u!1 &8809308086212308550
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7068118861231698070}
-  - component: {fileID: 8278329082751714158}
+  - component: {fileID: 5974676490248202179}
+  - component: {fileID: 5817260227917846456}
   m_Layer: 0
-  m_Name: SkeletonMonsterFactory
+  m_Name: SpiderMonsterFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7068118861231698070
+--- !u!4 &5974676490248202179
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5476644973335940725}
+  m_GameObject: {fileID: 8809308086212308550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,20 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8278329082751714158
+--- !u!114 &5817260227917846456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5476644973335940725}
+  m_GameObject: {fileID: 8809308086212308550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5816f27e776514ba1ec71297e12e90, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ca307e7904daa64bb42bf3a075824a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentLevel: 1
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
-  skeletonPrefab: {fileID: 1242434079615175751, guid: 0eca612410176b149ba51ced2a124d28,
+  spiderPrefab: {fileID: 1092587919420453468, guid: 111d855eec8b0314eafddc39e60567f8,
     type: 3}

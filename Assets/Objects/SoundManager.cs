@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class SoundManager : MonoBehaviour
 {
    public SoundManager Instance;
-   public List<music>
+   //public List<audio> Music;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -23,9 +23,9 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (music.isPlaying() = false)
+        if (true /*music.isPlaying() = false*/)
         {
-            music.play;
+            //music.play;
         } 
 
     }

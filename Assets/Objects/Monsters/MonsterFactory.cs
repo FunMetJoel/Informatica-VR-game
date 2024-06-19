@@ -35,19 +35,5 @@ public abstract class MonsterFactory : MonoBehaviour
 
 
 
-public class SpiderMonsterFactory : MonsterFactory
-{
-    public SpiderMonster spiderPrefab;
-    public override IMonster CreateMonster()
-    {
-        SpiderMonster spider = Instantiate(spiderPrefab);
-        spider.Health = 100 * (1f + 0.1f * CurrentLevel);
-        spider.Speed = 5 * (1f + 0.1f * CurrentLevel);
-        spider.Damage = 10 * (1f + 0.1f * CurrentLevel);
-        spider.AttackSpeed = 1.5f * (1f + 0.1f * CurrentLevel);
-        spider.AttackRange = 2 * (1f + 0.1f * CurrentLevel);
-        return spider;
-    }
-}
 
 

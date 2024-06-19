@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
  
      void Start(){
         sgo = FindObjectOfType<SpawnGameObject>();
-     
+        Hp = MaxHealth;
 
     }
     [SerializeField] public int MaxHealth;
