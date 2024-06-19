@@ -19,7 +19,12 @@ public class SkeletonMonster : MonoBehaviour, IMonster
         Debug.Log("SkeletonMonster Die");
     }
 
-    public float Health { get; set; }
+    public void Setup()
+    {
+        GetComponent<Health>().MaxHealth = Health;
+    }
+
+    public int Health { get; set; }
     public float Speed { get; set; }
     public float Damage { get; set; }
     public float AttackSpeed { get; set; }

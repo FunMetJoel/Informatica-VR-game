@@ -19,9 +19,14 @@ public class GhostMonster : MonoBehaviour, IMonster
         Debug.Log("GhostMonster Die");
     }
 
-    public float Health { get; set; }
+    public int Health { get; set; }
     public float Speed { get; set; }
     public float Damage { get; set; }
     public float AttackSpeed { get; set; }
     public float AttackRange { get; set; }
+
+    public void Setup()
+    {
+        GetComponent<Health>().MaxHealth = Health;
+    }
 }
