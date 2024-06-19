@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa012b19ab067843a0a9554645312c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 1
+  CurrentLevel: 0
   position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  ghostPrefab: {fileID: 6148148418989284397, guid: e3a1fc4f43d14374ab9f28efb66b28f0,
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  ghostPrefab: {fileID: 6523739577080684859, guid: a234507551f6fa94997667f2218180bd,
     type: 3}

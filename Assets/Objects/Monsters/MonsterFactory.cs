@@ -8,7 +8,9 @@ public interface IMonster
     void Move();
     void Die();
 
-    float Health { get; set; }
+    void Setup();
+
+    int Health { get; set; }
     float Speed { get; set; }
     float Damage { get; set; }
     float AttackSpeed { get; set; }

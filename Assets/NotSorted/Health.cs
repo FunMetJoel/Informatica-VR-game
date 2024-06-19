@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
      
 
     }
-    [SerializeField] private int MaxHealth;
+    [SerializeField] public int MaxHealth;
     [SerializeField] private int Hp;
 
     public int PublicMaxHealth => MaxHealth;
