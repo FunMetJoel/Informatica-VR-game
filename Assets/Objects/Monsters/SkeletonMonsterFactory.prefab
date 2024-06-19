@@ -47,4 +47,5 @@ MonoBehaviour:
   CurrentLevel: 1
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
-  skeletonPrefab: {fileID: 0}
+  skeletonPrefab: {fileID: 1242434079615175751, guid: 0eca612410176b149ba51ced2a124d28,
+    type: 3}

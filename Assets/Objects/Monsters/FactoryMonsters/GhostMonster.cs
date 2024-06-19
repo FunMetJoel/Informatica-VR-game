@@ -28,5 +28,9 @@ public class GhostMonster : MonoBehaviour, IMonster
     public void Setup()
     {
         GetComponent<Health>().MaxHealth = Health;
+        attackCollider.size = new Vector3(AttackRange, 1, AttackRange);
     }
+
+    [SerializeField]
+    private BoxCollider attackCollider;
 }

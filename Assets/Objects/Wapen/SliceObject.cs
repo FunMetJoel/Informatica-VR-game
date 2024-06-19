@@ -75,6 +75,7 @@ public class SliceObject : MonoBehaviour
         slicedObject.tag = "Cut";
         collider.convex = true;
         slicedObject.AddComponent<MeshFadeOut>();
+        slicedObject.AddComponent<CutDelay>();
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
 

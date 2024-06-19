@@ -1254,6 +1254,8 @@ GameObject:
   - component: {fileID: 4084731896454890654}
   - component: {fileID: 4084731896454890653}
   - component: {fileID: 4084731896454890652}
+  - component: {fileID: 1585451851797666596}
+  - component: {fileID: 2778338591944738064}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1449,6 +1451,32 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!136 &1585451851797666596
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896454890642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.71
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2778338591944738064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896454890642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587539391428dc347914fe0ae50199f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4084731896643467427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,9 +1496,11 @@ GameObject:
   - component: {fileID: 447876616319843088}
   - component: {fileID: 4486973837928060314}
   - component: {fileID: 1113992479}
+  - component: {fileID: 4027024437885541217}
+  - component: {fileID: 9059999589414004274}
   m_Layer: 6
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1679,7 +1709,7 @@ MonoBehaviour:
   st: {fileID: 0}
   wc: {fileID: 0}
   buttonPressA:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Press A
       m_Type: 0
@@ -1689,9 +1719,10 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -6798542248489769793, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   buttonPressB:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Press B
       m_Type: 0
@@ -1701,9 +1732,10 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 7995178753535697531, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   buttonPressX:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Press X
       m_Type: 0
@@ -1713,9 +1745,10 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -967138568156414367, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   buttonPressY:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Press Y
       m_Type: 0
@@ -1725,7 +1758,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 479867610518067174, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!143 &1113992479
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1744,6 +1778,44 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4027024437885541217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896643467427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829227c7ad8b834a97a62eb7ef501aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sgo: {fileID: 6905234780598124923}
+  MaxHealth: 25
+  Hp: 0
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Damaged:
+    m_PersistentCalls:
+      m_Calls: []
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9059999589414004274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896643467427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6471ae5742d533149b5e079e6b9c2c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4486973837928060314}
+  coins: 100
 --- !u!1 &4084731897277766444
 GameObject:
   m_ObjectHideFlags: 0

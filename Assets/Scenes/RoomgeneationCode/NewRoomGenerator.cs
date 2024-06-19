@@ -73,7 +73,7 @@ public class NewRoomGenerator : MonoBehaviour
         }
     }
 
-    object GetRandomRoomPrefab()
+    GameObject GetRandomRoomPrefab()
     {
         float totalWeight = 0;
         foreach (WeightedRoom room in roomPrefabs)
@@ -100,7 +100,7 @@ public class NewRoomGenerator : MonoBehaviour
         Debug.Log("Generating room...");
 
         // Get a random room prefab
-        GameObject roomPrefab = (GameObject)GetRandomRoomPrefab();
+        GameObject roomPrefab = GetRandomRoomPrefab();
         GameObject room = Instantiate(roomPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
         // Destroy the spawn point

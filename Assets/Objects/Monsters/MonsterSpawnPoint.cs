@@ -9,11 +9,13 @@ public class MonsterSpawnPoint : MonoBehaviour
     {
         Debug.Log("Spawning random monster");
 
-        MonsterFactory monsterFactory = monsterFactories[0];
+        MonsterFactory monsterFactory = GetRandomMonsterFactory();
         monsterFactory.CurrentLevel = NewRoomGenerator.Instance.iterations;
         monsterFactory.position = transform.position;
+        Debug.Log("Monster position: " + monsterFactory.position);
         monsterFactory.rotation = transform.rotation;
-        monsterFactory.CreateMonster();
+        IMonster monster = monsterFactory.CreateMonster();
+        monster.Setup();
 
         Debug.Log("Monster spawned");
     }
