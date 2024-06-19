@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4836225784291761956}
   - component: {fileID: 4836225784291761960}
   - component: {fileID: 4836225784291761959}
+  - component: {fileID: 6523739577080684859}
   m_Layer: 12
   m_Name: Ghost2
   m_TagString: Untagged
@@ -109,6 +110,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.55, z: 0}
+--- !u!114 &6523739577080684859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836225785048876957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a2f5bde3001c54a827748e32abbfad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &242197232105083828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,3 +312,17 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242197232105083828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1557637135449063737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7583600382906805619, guid: 8242d247159ec462794ba075ca8c938e,
+    type: 3}
+  m_PrefabInstance: {fileID: 242197232105083828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &1264586448385546199
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557637135449063737}
+  m_Mesh: {fileID: 3772797090071207700, guid: 46f311046d2104da8b56be3d0a49a119, type: 3}

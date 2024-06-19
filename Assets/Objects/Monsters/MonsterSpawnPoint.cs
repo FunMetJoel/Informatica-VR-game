@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MonsterSpawnPoint : MonoBehaviour
 {
-    public list<MonsterFactory> monsterFactories;
+    public List<MonsterFactory> monsterFactories;
     void Start()
     {
         Debug.Log("Spawning random monster");
 
-        MonsterFactory monsterFactory = GetRandomMonsterFactory();
+        MonsterFactory monsterFactory = monsterFactories[0];
         monsterFactory.CurrentLevel = NewRoomGenerator.Instance.iterations;
         monsterFactory.position = transform.position;
         monsterFactory.rotation = transform.rotation;
