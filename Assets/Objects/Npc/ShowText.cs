@@ -41,6 +41,13 @@ public class ShowText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (NewText)
+        {
+            Color color = textElement.color;
+            color.a = 1;
+            textElement.color = color;
+
+        }
         Completeheader = GenerateHeaderText(header);
         combinedText = Completeheader +"\n" + textValue;
         textElement.text = combinedText;
@@ -55,7 +62,7 @@ public class ShowText : MonoBehaviour
     {
         Color color = textElement.color;
         yield return new WaitForSeconds(waitBeforeFade);
-        if(NewText)
+       if(NewText)
         {
             NewText = false;
             color.a = 1;
@@ -76,6 +83,7 @@ public class ShowText : MonoBehaviour
         header = null;
         color.a = 1;
         textElement.color = color;
+        NewText = false;
     }
 
 }

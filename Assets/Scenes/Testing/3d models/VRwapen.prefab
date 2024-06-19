@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 8340111280782627644}
   - component: {fileID: 1040191153118273543}
   - component: {fileID: 2944306849606746668}
+  - component: {fileID: 4583210301103129396}
   m_Layer: 7
   m_Name: Sword
   m_TagString: Untagged
@@ -483,11 +484,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wc: {fileID: 0}
-  so: {fileID: 0}
+  so: {fileID: 4583210301103129396}
   lastDamageTime: 161.58
   damageCooldown: 0.55
   weaponDamage: 1
-  isPlayerWeapon: 0
+  isPlayerWeapon: 1
 --- !u!114 &4583210301103129396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,18 +496,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7208077572308581845}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1130885c36e66254ab13a035e7eb947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSlicePoint: {fileID: 3585248707779159880}
-  endSlicePoint: {fileID: 8798125782224462333}
-  velocityEstimator: {fileID: 543632675243835003}
+  startSlicePoint: {fileID: 4367957529159215108}
+  endSlicePoint: {fileID: 4367957528221434373}
+  velocityEstimator: {fileID: 4367957528221434372}
   cutMaterial: {fileID: 2100000, guid: 964b9d1150c70cf498adf63b78ecce7c, type: 2}
   target: {fileID: 0}
   cutForce: 2000
-  isPlayerWeapon: 1
 --- !u!1 &7661086624434832940
 GameObject:
   m_ObjectHideFlags: 0
