@@ -12,12 +12,12 @@ public class XaxisRestriction : MonoBehaviour
     
         if(transform.localPosition.x >= 45)
         {
-            transform.localpositionPosition.x = 45;  //hier
+            transform.localPosition = new Vector3(45, 0, 0);  //hier
             //if position x-axis exeeds 45 turn it into 45
         }
-        else if(transform.localPosition <= -45)
+        else if(transform.localPosition.x <= -45)
         {
-            transform.localPosition.x = -45;  //hier
+            transform.localPosition = new Vector3(-45, 0, 0);  //hier
             //if position x-axis exeeds -45 turn it into -45
         }
         //else do nothing

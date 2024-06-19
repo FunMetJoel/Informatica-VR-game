@@ -9,10 +9,12 @@ public class sliderLocation : MonoBehaviour
 
     private string SlideCube = "SlideCube";
 
-        // Update is called once per frame 
+    public Transform slidecube;
+
+    // Update is called once per frame 
     void Update()
     {
-        int XValue =  GetComponent<SlideCube>().transform.localPosition.x;    
-        Xslide = (XValue + 45) / 90;   // hier
+        float XValue = slidecube.localPosition.x;    
+        float Xslide = (XValue + 45) / 90;   // hier
     }   
 }

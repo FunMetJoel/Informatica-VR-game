@@ -13,8 +13,8 @@ public class Sliderbarfill : MonoBehaviour
     void Update()
     {
         //the fillamount of the bar is the same as the location given in the x-way 
-        int XValue =  slidecube.localposition.x;    
-        Xslide = (XValue + 45) / 90;   // hier   
+        float XValue = slidecube.localPosition.x;    
+        float Xslide = (XValue + 45) / 90;   // hier   
         barFill.fillAmount = Xslide;     
     }
 }
