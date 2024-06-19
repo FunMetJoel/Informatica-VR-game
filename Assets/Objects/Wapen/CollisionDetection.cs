@@ -54,6 +54,10 @@ public class CollisionDetection : MonoBehaviour
                 if(hp <= weaponDamage)
                 {
                     enemy.tag = "Cut";
+                     foreach (Transform child in enemy.GetComponentsInChildren<Transform>())
+                    {
+                        child.tag = "Cut";
+                    }
                 }
                  
                 Debug.Log(enemy.name);
