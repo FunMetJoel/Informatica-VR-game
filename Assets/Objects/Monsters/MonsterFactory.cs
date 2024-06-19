@@ -41,7 +41,7 @@ public class SpiderMonsterFactory : MonsterFactory
     public override IMonster CreateMonster()
     {
         SpiderMonster spider = Instantiate(spiderPrefab);
-        spider.Health = 100 * (1f + 0.1f * CurrentLevel);
+        spider.Health = Mathf.RoundToInt( 100 * (1f + 0.1f * CurrentLevel));
         spider.Speed = 5 * (1f + 0.1f * CurrentLevel);
         spider.Damage = 10 * (1f + 0.1f * CurrentLevel);
         spider.AttackSpeed = 1.5f * (1f + 0.1f * CurrentLevel);

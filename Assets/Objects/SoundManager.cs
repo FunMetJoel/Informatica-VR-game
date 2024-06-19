@@ -6,8 +6,8 @@ using UnityEngine.Audio;
 public class SoundManager : MonoBehaviour
 {
    public SoundManager Instance;
-   public List<music>
-    private void Awake()
+   //public List<music>;
+    public void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
 
@@ -23,10 +23,10 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (music.isPlaying() = false)
-        {
-            music.play;
-        } 
+        //if (music.isPlaying() = false)
+        //{
+            //music.play;
+        //} 
 
     }
 
