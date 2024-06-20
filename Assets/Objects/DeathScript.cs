@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DeathScript : MonoBehaviour
 {
-    public void Death()
+    // Start is called before the first frame update
+    void Start()
     {
-        SceneManager.LoadSceneAsync(1);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
