@@ -1486,7 +1486,7 @@ PrefabInstance:
     - target: {fileID: 2712547332297958620, guid: ff23399a86c35364997cc87dd8b34977,
         type: 3}
       propertyPath: m_Name
-      value: Death room
+      value: Kleine interessante kamer
       objectReference: {fileID: 0}
     - target: {fileID: 8111951509064912908, guid: ff23399a86c35364997cc87dd8b34977,
         type: 3}
