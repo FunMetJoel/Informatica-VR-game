@@ -60,12 +60,11 @@ public class NewRoomGenerator : MonoBehaviour
         if (iterations < maxIterations)
         {
             iterations++;
-            
             List<GameObject> OldRoomEndPoints = new List<GameObject>(roomSpawnPoints);
             roomSpawnPoints = new List<GameObject>();
-            foreach (GameObject spawnPoint in OldRoomEndPoints)
+            for (int i = 0; i < OldRoomEndPoints.Count; i++)
             {
-                GenerateRoom(spawnPoint);
+                GenerateRoom(OldRoomEndPoints[i]);
             }
         }
         else

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4645460792457188162}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6724904587021124815}
   m_Layer: 0
   m_Name: Aanval
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19affffff6919df4b86fdf9791090252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sword: {fileID: 5655372343560302252}
+  Sword: {fileID: 0}
   CanAttack: 1
   AttackCooldown: 1
   SwordAttackSound: {fileID: 8300000, guid: 3e2d405140a9eeb469e997b548864be7, type: 3}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 3597656862081226496}
   m_Layer: 5
   m_Name: Forground
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 1242434079615175751}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,19 +410,7 @@ MonoBehaviour:
       m_Calls: []
   Died:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8679118218465840721}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1242434079615175751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +438,7 @@ GameObject:
   - component: {fileID: 4947372719980356559}
   m_Layer: 5
   m_Name: Healbar canvas
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,71 +532,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 508348202647436781}
     m_Modifications:
-    - target: {fileID: 165144477255991509, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 801161010859836079, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467268806309178555, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742960798853482402, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2335059967583356968, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3061690949243868096, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3968441568344008032, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3968441568344008033, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3968441568344008035, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3968441568344008036, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3968441568344008038, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5714720572620578669, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779077614318530285, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 6782667309670242428, guid: 6e4019dcbde26c8408f888128d0a9a67,
         type: 3}
       propertyPath: m_RootOrder
@@ -664,25 +587,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6912888906887797704, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7038198458369467989, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 8172442304542317006, guid: 6e4019dcbde26c8408f888128d0a9a67,
         type: 3}
       propertyPath: m_Name
       value: LowPolySkeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172442304542317006, guid: 6e4019dcbde26c8408f888128d0a9a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
@@ -692,27 +600,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8748620209456352205}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5655372343560302252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3968441568344008033, guid: 6e4019dcbde26c8408f888128d0a9a67,
-    type: 3}
-  m_PrefabInstance: {fileID: 8748620209456352205}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3474897211936007583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5655372343560302252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f49e89d51ea5745bfaf1d65af7a68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wc: {fileID: 0}
-  so: {fileID: 0}
-  lastDamageTime: 0
-  damageCooldown: 0.55
-  weaponDamage: 1
-  isPlayerWeapon: 0

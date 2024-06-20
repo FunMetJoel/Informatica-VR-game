@@ -20,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room generation.unity
     guid: f3bcce4efb25d8b4ebb0f1126308a601
-  - enabled: 0
-    path: Assets/NotSorted/Animations/2animation tester.unity
-    guid: e9b19081211ccf748a7f150fc1bb61f8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3bd9bfda73c2bfd4f9304adf93b5d63d,
       type: 2}
