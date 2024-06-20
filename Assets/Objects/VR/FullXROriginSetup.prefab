@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3246986137665249929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3342398034093236742}
+  - component: {fileID: 8155034484614125550}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3342398034093236742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246986137665249929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4084731896263792229}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8155034484614125550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246986137665249929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40403b4205c007d4987d7e2f04952216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4084731896259044712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1282,7 @@ Transform:
   - {fileID: 5730421148101765026}
   - {fileID: 2781069613672101391}
   - {fileID: 7860186985563667827}
+  - {fileID: 3342398034093236742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1498,6 +1543,7 @@ GameObject:
   - component: {fileID: 1113992479}
   - component: {fileID: 4027024437885541217}
   - component: {fileID: 9059999589414004274}
+  - component: {fileID: 8109351315303820610}
   m_Layer: 6
   m_Name: XR Origin
   m_TagString: Player
@@ -1816,6 +1862,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 4486973837928060314}
   coins: 100
+--- !u!114 &8109351315303820610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896643467427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40403b4205c007d4987d7e2f04952216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4084731897277766444
 GameObject:
   m_ObjectHideFlags: 0
