@@ -17,6 +17,6 @@ public class healthbarfill : MonoBehaviour
     {
     int currenthp = hp.PublicHp;
     int maxhp = hp.PublicMaxHealth;     
-    Hpbar.fillAmount = currenthp / maxhp;
+    Hpbar.fillAmount = (float)currenthp / (float)maxhp;
     }
 }
