@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class SpiderMonster : MonoBehaviour, IMonster
@@ -23,6 +24,8 @@ public class SpiderMonster : MonoBehaviour, IMonster
     public void Setup()
     {
         GetComponent<Health>().MaxHealth = Health;
+
+        GetComponent<walkAiTestEnemy>().Playerpos = FindObjectOfType<XROrigin>().gameObject.transform;
         
         // Set random version active
         int randomIndex = Random.Range(0, versions.Count);

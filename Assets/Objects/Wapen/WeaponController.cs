@@ -9,6 +9,8 @@ public class WeaponController : MonoBehaviour
     public float AttackCooldown = 1.0f;
     public AudioClip SwordAttackSound;
     public bool IsAttacking = false;
+
+    public IMonster monster;
     
     private bool Inrange = false;
 
@@ -29,6 +31,8 @@ public class WeaponController : MonoBehaviour
         anim.SetTrigger("Attack");
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(SwordAttackSound);
+
+        monster.Attack();
         
         StartCoroutine(ResetAttackCooldown());
     }

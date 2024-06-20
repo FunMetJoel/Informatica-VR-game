@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class SkeletonMonster : MonoBehaviour, IMonster
@@ -22,6 +23,8 @@ public class SkeletonMonster : MonoBehaviour, IMonster
     public void Setup()
     {
         GetComponent<Health>().MaxHealth = Health;
+        GetComponent<walkAiTestEnemy>().Playerpos = FindObjectOfType<XROrigin>().gameObject.transform;
+
         attackCollider.size = new Vector3(AttackRange, 1, AttackRange);
     }
 
