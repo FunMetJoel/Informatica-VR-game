@@ -1543,6 +1543,7 @@ GameObject:
   - component: {fileID: 1113992479}
   - component: {fileID: 4027024437885541217}
   - component: {fileID: 9059999589414004274}
+  - component: {fileID: 8109351315303820610}
   m_Layer: 6
   m_Name: XR Origin
   m_TagString: Player
@@ -1861,6 +1862,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 4486973837928060314}
   coins: 100
+--- !u!114 &8109351315303820610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084731896643467427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40403b4205c007d4987d7e2f04952216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4084731897277766444
 GameObject:
   m_ObjectHideFlags: 0
